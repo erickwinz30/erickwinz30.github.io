@@ -12,11 +12,6 @@ class DegreeCard extends Component {
           <Flip left duration={2000}>
             <div className="card-img">
               <img
-                style={{
-                  maxWidth: "100%",
-                  maxHeight: "100%",
-                  transform: "scale(0.9)",
-                }}
                 src={require(`../../assets/images/${degree.logo_path}`)}
                 alt={degree.alt_name}
               />
