@@ -17,8 +17,14 @@ class Educations extends Component {
           </Fade>
         </div>
         <div className="educations-body-div">
-          {degrees.degrees.map((degree) => {
-            return <DegreeCard degree={degree} theme={theme} />;
+          {degrees.degrees.map((degree, index) => {
+            return (
+              <DegreeCard
+                key={`degree-${index}`}
+                degree={degree}
+                theme={theme}
+              />
+            );
           })}
         </div>
 
@@ -30,8 +36,14 @@ class Educations extends Component {
           </Fade>
         </div>
         <div className="educations-body-div">
-          {nonEducations.nonEducations.map((nonEducation) => {
-            return <DegreeCard degree={nonEducation} theme={theme} />;
+          {nonEducations.nonEducations.map((nonEducation, index) => {
+            return (
+              <DegreeCard
+                key={`non-education-${index}`}
+                degree={nonEducation}
+                theme={theme}
+              />
+            );
           })}
         </div>
       </div>
