@@ -25,7 +25,7 @@ const greeting = {
   subTitle:
     "A passionate Web Developer dedicated to building end-to-end digital solutions. I thrive on developing scalable and sustainable systems that drive efficiency and create tangible business impact.",
   resumeLink:
-    "https://drive.google.com/file/d/1BQyMU5WZKIfZQ8K2_a9sNQPbydfB_rR1/view?usp=sharing",
+    "https://drive.google.com/file/d/1S4Nhq4zRy-Ag46TPCSUfBroKRde5Qg31/view?usp=drive_link",
   portfolio_repository: "https://github.com/erickwinz30",
   githubProfile: "https://github.com/erickwinz30",
 };
@@ -604,49 +604,49 @@ const experience = {
 const projectsHeader = {
   title: "Projects",
   description:
-    "My projects makes use of vast variety of latest technology tools. My best experience is to create Data Science projects and deploy them to web applications using cloud infrastructure.",
+    "My projects leverage modern web technologies and frameworks to build practical solutions. My best experience is in digital transformation projects, where I develop full-stack web applications that help organizations transition from manual processes to efficient digital systems, improving operational workflows and user experience.",
   avatar_image_path: "projects_image.svg",
 };
 
-const publicationsHeader = {
-  title: "Publications",
-  description: "Some of my published Articles, Blogs and Research.",
-  avatar_image_path: "projects_image.svg",
-};
+// const publicationsHeader = {
+//   title: "Publications",
+//   description: "Some of my published Articles, Blogs and Research.",
+//   avatar_image_path: "projects_image.svg",
+// };
 
-const publications = {
-  data: [
-    {
-      id: "neuro-symbolic-sudoku-solver",
-      name: "Neuro-Symbolic Sudoku Solver",
-      createdAt: "2023-07-02T00:00:00Z",
-      description: "Paper published in KDD KiML 2023",
-      url: "https://arxiv.org/abs/2307.00653",
-    },
-    {
-      id: "mdp-diffusion",
-      name: "MDP-Diffusion",
-      createdAt: "2023-09-19T00:00:00Z",
-      description: "Blog published in Paperspace",
-      url: "https://blog.paperspace.com/mdp-diffusion/",
-    },
-    {
-      id: "consistency-models",
-      name: "Consistency Models",
-      createdAt: "2023-10-12T00:00:00Z",
-      description: "Blog published in Paperspace",
-      url: "https://blog.paperspace.com/consistency-models/",
-    },
-  ],
-};
+// const publications = {
+//   data: [
+//     {
+//       id: "neuro-symbolic-sudoku-solver",
+//       name: "Neuro-Symbolic Sudoku Solver",
+//       createdAt: "2023-07-02T00:00:00Z",
+//       description: "Paper published in KDD KiML 2023",
+//       url: "https://arxiv.org/abs/2307.00653",
+//     },
+//     {
+//       id: "mdp-diffusion",
+//       name: "MDP-Diffusion",
+//       createdAt: "2023-09-19T00:00:00Z",
+//       description: "Blog published in Paperspace",
+//       url: "https://blog.paperspace.com/mdp-diffusion/",
+//     },
+//     {
+//       id: "consistency-models",
+//       name: "Consistency Models",
+//       createdAt: "2023-10-12T00:00:00Z",
+//       description: "Blog published in Paperspace",
+//       url: "https://blog.paperspace.com/consistency-models/",
+//     },
+//   ],
+// };
 
 // Contact Page
 const contactPageData = {
   contactSection: {
     title: "Contact Me",
-    profile_image_path: "animated_ashutosh.png",
+    profile_image_path: "SKCK_PasFoto_BG_Removed.png",
     description:
-      "I am available on almost every social media. You can message me, I will reply within 24 hours. I can help you with ML, AI, React, Android, Cloud and Opensource Development.",
+      "Feel free to reach out through any of my social media channels. I typically respond within 24 hours. I can assist you with system design and architecture, front-end development using modern frameworks, back-end API development, and full-stack web application development using Laravel, Vue.js, and related technologies.",
   },
   blogSection: {
     title: "Blogs",
@@ -657,18 +657,18 @@ const contactPageData = {
   },
   addressSection: {
     title: "Address",
-    subtitle: "Saratoga Ave, San Jose, CA, USA 95129",
-    locality: "San Jose",
-    country: "USA",
-    region: "California",
-    postalCode: "95129",
-    streetAddress: "Saratoga Avenue",
+    subtitle: "Surabaya, Indonesia",
+    locality: "Surabaya",
+    country: "Indonesia",
+    region: "East Java",
+    postalCode: "60114",
+    streetAddress: "Some Street Name",
     avatar_image_path: "address_image.svg",
     location_map_link: "https://maps.app.goo.gl/NvYZqa34Wye4tpS17",
   },
   phoneSection: {
-    title: "",
-    subtitle: "",
+    title: "Phone Number",
+    subtitle: "+62 851 5543 1948",
   },
 };
 
@@ -684,7 +684,7 @@ export {
   certifications,
   experience,
   projectsHeader,
-  publicationsHeader,
-  publications,
+  // publicationsHeader,
+  // publications,
   contactPageData,
 };
