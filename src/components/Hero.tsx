@@ -39,7 +39,7 @@ const Hero = () => {
           </a>
 
           <a
-            href="./assets/CV_Erick_Winata.pdf"
+            href="/assets/CV_ATS_ErickWinata_English (11-1-2026).pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="group px-8 py-4 bg-surface text-gray-200 border border-gray-700 rounded-lg font-medium flex items-center justify-center gap-2 hover:bg-gray-800 transition-all w-full sm:w-auto hover:-translate-y-1"

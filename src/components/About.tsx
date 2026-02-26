@@ -12,7 +12,7 @@ const About = () => {
             <div className="absolute inset-0 bg-accent rounded-2xl transform translate-x-4 translate-y-4 transition-transform group-hover:translate-x-2 group-hover:translate-y-2 -z-10"></div>
             <div className="relative overflow-hidden rounded-2xl border-2 border-accent/20 bg-primary w-64 h-64 md:w-80 md:h-80 shadow-2xl">
               <img
-                src="./assets/profile_erick.png"
+                src="/assets/profile_erick.png"
                 alt="Erick Winata"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"

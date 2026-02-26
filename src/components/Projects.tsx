@@ -8,7 +8,7 @@ const projects = [
     techStack: ["React", "Golang", "PostgreSQL"],
     githubLink: "https://github.com/erickwinz30/attendance-app-frontend",
     externalLink: "",
-    image: "./assets/img/portfolio/attendance-app/home.png",
+    image: "/assets/img/portfolio/attendance-app/home.png",
   },
   {
     title: "Simple Ecommerce",
@@ -17,7 +17,7 @@ const projects = [
     techStack: ["Ionic", "Vue", "Firebase"],
     githubLink: "https://github.com/erickwinz30/computers-ecommerce-ionic",
     externalLink: "https://computers-ecommerce.web.app",
-    image: "./assets/img/portfolio/ionic-ecommerce/iPhone-13-PRO-home.png",
+    image: "/assets/img/portfolio/ionic-ecommerce/iPhone-13-PRO-home.png",
   },
   {
     title: "Internal HR & Employee Onboarding System",
@@ -35,8 +35,7 @@ const projects = [
     techStack: ["Laravel", "Blade", "MySQL"],
     githubLink: "",
     externalLink: "",
-    image:
-      "./assets/img/portfolio/kenzou-app-screenshot/customers-homepage.png",
+    image: "/assets/img/portfolio/kenzou-app-screenshot/customers-homepage.png",
   },
   {
     title: "Calculus - Calorie Tracking App",
@@ -45,7 +44,7 @@ const projects = [
     techStack: ["Laravel", "Blade", "MySQL"],
     githubLink: "https://github.com/erickwinz30/Calculus",
     externalLink: "",
-    image: "./assets/img/portfolio/calculus-screenshot/homepage-view.png",
+    image: "/assets/img/portfolio/calculus-screenshot/homepage-view.png",
   },
   {
     title: "Warehouse Inventory",
@@ -54,7 +53,7 @@ const projects = [
     techStack: ["ReactJS", "Firebase", "Laravel"],
     githubLink: "",
     externalLink: "",
-    image: "./assets/img/portfolio/bfit-gudang-screenshot/home.png",
+    image: "/assets/img/portfolio/bfit-gudang-screenshot/home.png",
   },
 ];
 
