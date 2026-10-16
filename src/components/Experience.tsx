@@ -2,6 +2,19 @@ import { Briefcase } from "lucide-react";
 
 const experiences = [
   {
+    period: "Apr 2026 - Oct 2026",
+    role: "AI Engineer - Graduate Trainee",
+    company: "99.co | South Jakarta",
+    descriptions: [
+      "Architected and built a multi-tenant AI automation platform in Go and React, migrating legacy n8n workflows into a high-reliability modular monolith.",
+      "Engineered a hybrid Conversational AI pipeline integrating WhatsApp (Gupshup) and Voice AI (Retell AI) with OpenAI LLMs for multi-stage lead qualification.",
+      "Implemented multi-tenant RAG using PostgreSQL (pgvector) and OpenAI embeddings, ensuring strict tenant-scoped knowledge isolation.",
+      "Designed a deterministic Funnel Engine & State Machine with Redis & Asynq managing 7-stage scheduled follow-ups and night-window gating.",
+      "Engineered CRM WhatsApp Auto-Message subsystem delivering multi-step WhatsApp template sequences with dual provider support and recovery sweepers.",
+      "Shipped a React & TypeScript admin portal for real-time tenant controls, lead retesting, and tele-manager routing.",
+    ],
+  },
+  {
     period: "Jul 2025 - Oct 2025",
     role: "IT Programmer (Internship)",
     company: "PT. Prakarsa Alam Segar (Wings Food) - Bekasi",
@@ -9,6 +22,16 @@ const experiences = [
       "Identified and resolved critical bugs in the HR system infrastructure.",
       "Led the digital migration of the recruitment process from Google Drive to a centralized internal system.",
       "Developed a real-time monitoring dashboard using React.js and Firebase to track the status of applicant documents.",
+    ],
+  },
+  {
+    period: "Aug 2024 - Jan 2025",
+    role: "Full-Stack Developer",
+    company: "Kenzou Drive Thru Car Wash (Self-Employed)",
+    descriptions: [
+      "Designed and engineered a comprehensive car wash management application for administrators and members using the Laravel framework.",
+      "Implemented gamification features, including XP, Badges, and Vouchers, to significantly enhance user engagement and customer loyalty.",
+      "Validated system functionality through Black-box testing and User Acceptance Testing (UAT) to ensure high-quality software delivery.",
     ],
   },
   {

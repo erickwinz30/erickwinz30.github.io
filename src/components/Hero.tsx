@@ -16,14 +16,14 @@ const Hero = () => {
         </h1>
 
         <h2 className="text-2xl md:text-3xl text-gray-300 font-medium mb-8">
-          Fullstack Developer <span className="text-accent px-2">|</span>{" "}
+          Full-Stack & AI Automation Engineer <span className="text-accent px-2">|</span>{" "}
           Information Systems Graduate
         </h2>
 
         <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-          A detail-oriented Information Systems graduate with a strong
-          foundation in building scalable web applications. Experienced in
-          optimizing internal systems and digitalizing manual processes.
+          Detail-oriented Information Systems graduate and Fullstack & AI Engineer
+          with a strong foundation in building scalable web applications, Conversational
+          AI pipelines, and multi-tenant automation systems.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -39,7 +39,7 @@ const Hero = () => {
           </a>
 
           <a
-            href="/assets/CV_ATS_ErickWinata_English (11-1-2026).pdf"
+            href="/assets/CV_ATS_ErickWinata_English_17-10-2026.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="group px-8 py-4 bg-surface text-gray-200 border border-gray-700 rounded-lg font-medium flex items-center justify-center gap-2 hover:bg-gray-800 transition-all w-full sm:w-auto hover:-translate-y-1"

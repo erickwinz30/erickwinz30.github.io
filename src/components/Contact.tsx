@@ -8,7 +8,7 @@ const Contact = () => {
     >
       <div className="max-w-3xl mx-auto text-center">
         <h3 className="text-sm font-mono text-accent mb-4 tracking-wider">
-          06. What's Next?
+          05. What's Next?
         </h3>
         <h4 className="text-4xl md:text-5xl font-bold text-white mb-6">
           Let's Connect!
@@ -44,7 +44,7 @@ const Contact = () => {
               size={24}
             />
             <span className="text-sm text-gray-400 text-center">
-              +62 851-5543-1948
+              +62 818-5700-17
             </span>
           </div>
           <div className="px-6 flex flex-col items-center group hidden md:flex">

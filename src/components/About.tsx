@@ -25,7 +25,7 @@ const About = () => {
               <p>
                 I am a{" "}
                 <span className="text-gray-200 font-medium">
-                  Fullstack Developer
+                  Full-Stack & AI Automation Engineer
                 </span>{" "}
                 and an Information Systems graduate from{" "}
                 <span className="text-accent">
@@ -40,21 +40,14 @@ const About = () => {
                 .
               </p>
               <p>
-                I have deep expertise in the PHP ecosystem{" "}
-                <span className="text-gray-200">(Laravel)</span> and modern
-                JavaScript
-                <span className="text-gray-200">
-                  {" "}
-                  (React, Vue.js, TypeScript)
-                </span>
-                . I am passionate about designing intuitive interfaces with
-                solid and efficient backend logic.
+                Experienced in building scalable web applications and multi-tenant AI automation systems. Proficient in{" "}
+                <span className="text-gray-200">Go (Golang), PHP (Laravel), and modern JavaScript (React, Vue.js, TypeScript)</span>
+                . Passionate about designing robust backend architectures and AI-driven conversational workflows.
               </p>
               <p>
-                I am accustomed to handling the entire Software Development Life
-                Cycle <span className="text-accent">(SDLC)</span>, from
-                designing complex database schemas to implementing responsive
-                front-ends.
+                Accustomed to handling the entire Software Development Life
+                Cycle <span className="text-accent">(SDLC)</span>, leveraging{" "}
+                <span className="text-gray-200">AI-assisted engineering</span> to accelerate delivery while ensuring strict system design and data integrity.
               </p>
             </div>
 

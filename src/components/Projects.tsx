@@ -2,6 +2,15 @@ import { Folder, ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
+    title: "Real-Estate AI Call & Chatbot Platform",
+    description:
+      "An end-to-end conversational AI and lead automation platform built to qualify prospective property buyers and schedule site visits 24/7. Integrates WhatsApp Chatbot and AI Voice Calling to answer project-specific inquiries via multi-tenant RAG, execute deterministic 7-stage scheduled follow-ups, and automate CRM sales outreach.",
+    techStack: ["Go", "PostgreSQL", "pgvector", "Redis", "Asynq", "React", "TypeScript", "OpenAI", "Retell AI", "Gupshup"],
+    githubLink: "",
+    externalLink: "",
+    image: "",
+  },
+  {
     title: "Attendance App",
     description:
       "A full-stack web application for employee attendance management using QR code technology. Features include real-time tracking and role-based access control (Employee, HRD, Scanner).",
@@ -49,8 +58,8 @@ const projects = [
   {
     title: "Warehouse Inventory",
     description:
-      "A comprehensive Warehouse Inventory System to streamline stock tracking. Initially built with Laravel MVC architecture and later refactored the frontend using ReactJS.",
-    techStack: ["ReactJS", "Firebase", "Laravel"],
+      "A comprehensive Warehouse Inventory System to streamline stock tracking. Built with Laravel and refactored the frontend to Vue.js, implementing the Safety Stock method to optimize inventory management.",
+    techStack: ["Laravel", "Vue.js"],
     githubLink: "",
     externalLink: "",
     image: "/assets/img/portfolio/bfit-gudang-screenshot/home.png",
