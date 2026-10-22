@@ -45,10 +45,12 @@ export interface Fact {
 
 export interface Contact {
   email: string;
+  whatsapp: string;
   location: string;
   availability: string;
   linkedin: string;
   github: string;
+  cv: string;
 }
 
 export const navLinks: NavLink[] = [
@@ -230,10 +232,12 @@ export const bioParagraphs: string[] = [
 
 export const contact: Contact = {
   email: "erickwinz1008@gmail.com",
+  whatsapp: "62818570017",
   location: "East Surabaya, Indonesia",
   availability: "Open to full-time roles and freelance work",
   linkedin: "https://linkedin.com/in/erick-winata-b59581235/",
   github: "https://github.com/erickwinz30",
+  cv: "/assets/CV_ATS_ErickWinata_English_17-10-2026.pdf",
 };
 
 export const stackMarquee: string[] = [

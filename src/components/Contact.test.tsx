@@ -12,6 +12,9 @@ describe("Contact", () => {
     expect(
       screen.getByRole("link", { name: "erickwinz1008@gmail.com" }),
     ).toHaveAttribute("href", "mailto:erickwinz1008@gmail.com");
+    expect(
+      screen.getByRole("link", { name: "Chat on WhatsApp" }),
+    ).toHaveAttribute("href", "https://wa.me/62818570017");
     expect(screen.getByText(/East Surabaya, Indonesia/)).toBeInTheDocument();
   });
 });
@@ -20,6 +23,10 @@ describe("Footer", () => {
   it("renders identity, social links, and copyright", () => {
     render(<Footer />);
     expect(screen.getByText("ERICK WINATA")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "WhatsApp" })).toHaveAttribute(
+      "href",
+      "https://wa.me/62818570017",
+    );
     expect(screen.getByRole("link", { name: "LinkedIn" })).toHaveAttribute(
       "href",
       "https://linkedin.com/in/erick-winata-b59581235/",

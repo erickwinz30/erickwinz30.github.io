@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "motion/react";
 import { ArrowDown, ArrowUpRight, Download } from "lucide-react";
+import { contact } from "../data/content";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -78,7 +79,7 @@ export const Hero = () => {
               />
             </a>
             <a
-              href="/assets/CV_ATS_ErickWinata_English_17-10-2026.pdf"
+              href={contact.cv}
               className="group inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-primary hover:text-primary"
             >
               Download CV

@@ -16,6 +16,14 @@ export const Footer = () => {
             {contact.email}
           </a>
           <a
+            href={`https://wa.me/${contact.whatsapp}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-primary"
+          >
+            WhatsApp
+          </a>
+          <a
             href={contact.linkedin}
             target="_blank"
             rel="noopener noreferrer"

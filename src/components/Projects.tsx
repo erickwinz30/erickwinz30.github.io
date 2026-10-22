@@ -30,18 +30,7 @@ export const Projects = () => {
 
             return (
               <Reveal key={project.id} delay={index * 0.06}>
-                <article className="group relative flex h-full flex-col">
-                  {project.href ? (
-                    <a
-                      href={project.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`Open ${project.title}`}
-                      data-cursor="view"
-                      className="absolute inset-0 z-10"
-                    />
-                  ) : null}
-
+                <article className="group flex h-full flex-col">
                   <div className="relative aspect-[16/10] overflow-hidden border border-border bg-card">
                     {project.image ? (
                       <img
@@ -95,6 +84,8 @@ export const Projects = () => {
                           href={project.href}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label={`${project.title} on GitHub`}
+                          data-cursor="view"
                           className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.12em] text-foreground transition-colors hover:text-primary"
                         >
                           <Github size={15} />
@@ -106,6 +97,8 @@ export const Projects = () => {
                           href={project.demoHref}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label={`${project.title} live demo`}
+                          data-cursor="view"
                           className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.12em] text-foreground transition-colors hover:text-primary"
                         >
                           <ExternalLink size={15} />

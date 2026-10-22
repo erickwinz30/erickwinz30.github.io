@@ -26,9 +26,13 @@ describe("Projects", () => {
     expect(screen.getByText(/tenant-scoped retrieval/i)).toBeInTheDocument();
   });
 
-  it("only marks linked cards as viewable", () => {
+  it("keeps card actions explicit and only marks external actions", () => {
     const { container } = render(<Projects />);
-    const viewTargets = container.querySelectorAll('[data-cursor="view"]');
-    expect(viewTargets).toHaveLength(2);
+    const cards = container.querySelectorAll("article");
+
+    expect(cards[0].querySelectorAll('[data-cursor="view"]')).toHaveLength(0);
+    expect(cards[1].querySelectorAll('[data-cursor="view"]')).toHaveLength(1);
+    expect(cards[2].querySelectorAll('[data-cursor="view"]')).toHaveLength(2);
+    expect(cards[3].querySelectorAll('[data-cursor="view"]')).toHaveLength(0);
   });
 });

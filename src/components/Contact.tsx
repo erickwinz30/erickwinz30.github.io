@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, MessageCircle } from "lucide-react";
 import { contact } from "../data/content";
 
 export const Contact = () => {
@@ -20,13 +20,25 @@ export const Contact = () => {
             the constraint that matters most. A short note is enough.
           </p>
 
-          <a
-            href={`mailto:${contact.email}`}
-            className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-primary-foreground px-6 py-3.5 text-sm font-medium text-primary transition-transform hover:-translate-y-0.5"
-          >
-            {contact.email}
-            <ArrowUpRight size={16} />
-          </a>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <a
+              href={`mailto:${contact.email}`}
+              className="inline-flex w-fit items-center gap-2 rounded-full bg-primary-foreground px-6 py-3.5 text-sm font-medium text-primary transition-transform hover:-translate-y-0.5"
+            >
+              {contact.email}
+              <ArrowUpRight size={16} />
+            </a>
+            <a
+              href={`https://wa.me/${contact.whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Chat on WhatsApp"
+              className="inline-flex w-fit items-center gap-2 rounded-full border border-primary-foreground/40 px-6 py-3.5 text-sm font-medium transition-colors hover:bg-primary-foreground hover:text-primary"
+            >
+              <MessageCircle size={16} />
+              WhatsApp
+            </a>
+          </div>
 
           <div className="mt-8 flex flex-wrap gap-6 border-t border-primary-foreground/20 pt-6">
             <a

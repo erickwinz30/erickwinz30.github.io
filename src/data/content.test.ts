@@ -56,8 +56,9 @@ describe("portfolio content", () => {
     expect(bioParagraphs).toHaveLength(3);
   });
 
-  it("uses the real contact address", () => {
+  it("uses the real contact address and WhatsApp number", () => {
     expect(contact.email).toBe("erickwinz1008@gmail.com");
+    expect(contact.whatsapp).toBe("62818570017");
     expect(contact.location).toContain("Surabaya");
   });
 });

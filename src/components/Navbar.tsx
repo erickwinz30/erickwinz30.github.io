@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { navLinks } from "../data/content";
+import { contact, navLinks } from "../data/content";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -21,12 +22,38 @@ export const Navbar = () => {
       if (event.key === "Escape") {
         setOpen(false);
         menuButtonRef.current?.focus();
+        return;
+      }
+
+      if (event.key !== "Tab" || !dialogRef.current) return;
+
+      const focusables: HTMLElement[] = [
+        menuButtonRef.current,
+        ...Array.from(
+          dialogRef.current.querySelectorAll<HTMLElement>(
+            'a[href], button:not([disabled])',
+          ),
+        ),
+      ].filter((element): element is HTMLElement => element !== null);
+
+      if (focusables.length === 0) return;
+
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
       }
     };
 
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     document.addEventListener("keydown", onKeyDown);
+    dialogRef.current?.querySelector<HTMLElement>("a[href]")?.focus();
 
     return () => {
       document.body.style.overflow = previousOverflow;
@@ -92,6 +119,7 @@ export const Navbar = () => {
 
       {open ? (
         <div
+          ref={dialogRef}
           id="mobile-menu"
           role="dialog"
           aria-modal="true"
@@ -119,10 +147,10 @@ export const Navbar = () => {
               Let's talk
             </a>
             <a
-              href="mailto:erickwinz1008@gmail.com"
+              href={`mailto:${contact.email}`}
               className="block text-sm text-muted-foreground"
             >
-              erickwinz1008@gmail.com
+              {contact.email}
             </a>
           </div>
         </div>

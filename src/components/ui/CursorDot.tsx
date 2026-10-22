@@ -3,20 +3,28 @@ import { motion, useMotionValue, useReducedMotion, useSpring } from "motion/reac
 
 export const CursorDot = () => {
   const reduceMotion = useReducedMotion();
-  const [enabled] = useState(
+  const [finePointer, setFinePointer] = useState(
     () =>
       typeof window !== "undefined" &&
-      window.matchMedia("(pointer: fine)").matches &&
-      !window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+      window.matchMedia("(pointer: fine)").matches,
   );
   const x = useMotionValue(-100);
   const y = useMotionValue(-100);
   const springX = useSpring(x, { stiffness: 500, damping: 40, mass: 0.4 });
   const springY = useSpring(y, { stiffness: 500, damping: 40, mass: 0.4 });
   const [hovering, setHovering] = useState(false);
+  const enabled = finePointer && !reduceMotion;
 
   useEffect(() => {
-    if (!enabled || reduceMotion) return;
+    const media = window.matchMedia("(pointer: fine)");
+    const onChange = () => setFinePointer(media.matches);
+
+    media.addEventListener("change", onChange);
+    return () => media.removeEventListener("change", onChange);
+  }, []);
+
+  useEffect(() => {
+    if (!enabled) return;
 
     document.body.classList.add("custom-cursor");
 
@@ -41,9 +49,9 @@ export const CursorDot = () => {
       window.removeEventListener("pointermove", onMove);
       window.removeEventListener("pointerover", onOver);
     };
-  }, [enabled, reduceMotion, x, y]);
+  }, [enabled, x, y]);
 
-  if (!enabled || reduceMotion) return null;
+  if (!enabled) return null;
 
   return (
     <motion.div
