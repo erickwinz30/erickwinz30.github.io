@@ -20,6 +20,8 @@ export interface Project {
   imageWidth?: number;
   imageHeight?: number;
   panel?: string;
+  panelLabel?: string;
+  panelMeta?: string;
   href?: string;
   demoHref?: string;
   breakdown?: string[];
@@ -91,9 +93,11 @@ export const projects: Project[] = [
     index: "01",
     title: "99.co — Real-Estate AI Platform",
     description:
-      "Multi-tenant WhatsApp and voice AI pipeline for lead qualification, site-visit scheduling and CRM follow-up.",
+      "An end-to-end conversational AI and lead automation platform built to qualify prospective property buyers and schedule site visits 24/7. Integrates WhatsApp Chatbot and AI Voice Calling to answer project-specific inquiries via multi-tenant RAG, execute deterministic 7-stage scheduled follow-ups, and automate CRM sales outreach.",
     stack: ["Go", "PostgreSQL", "pgvector", "Redis", "React", "OpenAI"],
     panel: "99",
+    panelLabel: "AI Platform",
+    panelMeta: "Go + React",
     breakdown: [
       "Migrated production n8n workflows into a Go modular monolith.",
       "Multi-tenant RAG with PostgreSQL/pgvector and tenant-scoped retrieval.",
@@ -107,7 +111,7 @@ export const projects: Project[] = [
     index: "02",
     title: "Attendance App",
     description:
-      "QR attendance with real-time tracking and role-based access for employees, HR and scanners.",
+      "A full-stack web application for employee attendance management using QR code technology. Features include real-time tracking and role-based access control (Employee, HRD, Scanner).",
     stack: ["React", "Go", "PostgreSQL"],
     image: "/assets/img/portfolio/attendance-app/home.png",
     imageWidth: 1920,
@@ -119,7 +123,7 @@ export const projects: Project[] = [
     index: "03",
     title: "Simple Ecommerce",
     description:
-      "Mobile storefront with cart, Midtrans checkout and an admin dashboard.",
+      "A full-stack mobile e-commerce application for computer hardware products. Features include a shopping cart, Midtrans payment integration, and an admin dashboard.",
     stack: ["Ionic", "Vue", "Firebase"],
     image: "/assets/img/portfolio/ionic-ecommerce/iPhone-13-PRO-home.png",
     imageWidth: 858,
@@ -128,15 +132,49 @@ export const projects: Project[] = [
     demoHref: "https://computers-ecommerce.web.app",
   },
   {
-    id: "kenzou",
+    id: "hr-onboarding",
     index: "04",
+    title: "Internal HR & Employee Onboarding System",
+    description:
+      "An exclusive internal tool for the HR department (Wingsfood Internship Project). Optimized the document collection workflow with a direct file upload interface and Excel-based autofill features.",
+    stack: ["Laravel", "ReactJS", "Firebase", "MySQL"],
+    panel: "HR",
+    panelLabel: "Internal system",
+    panelMeta: "Laravel + React",
+  },
+  {
+    id: "kenzou",
+    index: "05",
     title: "Kenzou Car Wash",
     description:
-      "Laravel management app with XP, badges, vouchers and leaderboards built for customer retention.",
+      "A full-stack car wash management application for admins and members. Integrated gamification features to increase user engagement.",
     stack: ["Laravel", "Blade", "MySQL"],
     image: "/assets/img/portfolio/kenzou-app-screenshot/customers-homepage.png",
     imageWidth: 400,
     imageHeight: 897,
+  },
+  {
+    id: "calculus",
+    index: "06",
+    title: "Calculus - Calorie Tracking App",
+    description:
+      "Dicoding MSIB Capstone Project. Took full responsibility for database schema design, authentication, and back-end logic.",
+    stack: ["Laravel", "Blade", "MySQL"],
+    image: "/assets/img/portfolio/calculus-screenshot/homepage-view.png",
+    imageWidth: 1881,
+    imageHeight: 920,
+    href: "https://github.com/erickwinz30/Calculus",
+  },
+  {
+    id: "warehouse",
+    index: "07",
+    title: "Warehouse Inventory",
+    description:
+      "A comprehensive Warehouse Inventory System to streamline stock tracking. Built with Laravel and refactored the frontend to Vue.js, implementing the Safety Stock method to optimize inventory management.",
+    stack: ["Laravel", "Vue.js"],
+    image: "/assets/img/portfolio/bfit-gudang-screenshot/home.png",
+    imageWidth: 1906,
+    imageHeight: 961,
   },
 ];
 

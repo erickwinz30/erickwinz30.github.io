@@ -20,13 +20,16 @@ describe("portfolio content", () => {
     ]);
   });
 
-  it("describes exactly four selected projects", () => {
-    expect(projects).toHaveLength(4);
+  it("keeps all seven selected projects from the previous portfolio", () => {
+    expect(projects).toHaveLength(7);
     expect(projects.map((project) => project.id)).toEqual([
       "99co",
       "attendance",
       "ecommerce",
+      "hr-onboarding",
       "kenzou",
+      "calculus",
+      "warehouse",
     ]);
   });
 

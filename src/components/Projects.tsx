@@ -19,7 +19,7 @@ export const Projects = () => {
             </h2>
           </div>
           <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-            Four systems, built end to end. The flagship platform is available
+            Seven systems, built end to end. The flagship platform is available
             as a short technical breakdown.
           </p>
         </div>
@@ -47,10 +47,10 @@ export const Projects = () => {
                           {project.panel}
                         </span>
                         <span className="absolute left-5 top-5 text-[10px] uppercase tracking-[0.24em] text-muted-foreground">
-                          AI Platform
+                          {project.panelLabel}
                         </span>
                         <span className="absolute bottom-5 right-5 text-[10px] uppercase tracking-[0.24em] text-muted-foreground">
-                          Go + React
+                          {project.panelMeta}
                         </span>
                       </div>
                     )}
