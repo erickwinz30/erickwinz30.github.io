@@ -53,10 +53,10 @@ describe("portfolio content", () => {
     );
   });
 
-  it("lists all five roles and all six original skill groups", () => {
+  it("lists all five roles and the three condensed skill groups", () => {
     expect(experience).toHaveLength(5);
-    expect(skillGroups).toHaveLength(6);
-    expect(skillGroups.flatMap((group) => group.skills)).toHaveLength(31);
+    expect(skillGroups).toHaveLength(3);
+    expect(skillGroups.flatMap((group) => group.skills)).toHaveLength(19);
     expect(services).toHaveLength(3);
     expect(bioIntro.link.href).toBe("https://dinamika.ac.id/");
     expect(bioParagraphs).toHaveLength(2);
