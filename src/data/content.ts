@@ -29,7 +29,8 @@ export interface ExperienceItem {
   period: string;
   role: string;
   company: string;
-  result: string;
+  location: string;
+  details: string[];
 }
 
 export interface SkillGroup {
@@ -142,38 +143,59 @@ export const projects: Project[] = [
 export const experience: ExperienceItem[] = [
   {
     period: "Apr 2026 – Oct 2026",
-    role: "AI Engineer, Graduate Trainee",
+    role: "AI Engineer - Graduate Trainee",
     company: "99.co",
-    result:
-      "Built a multi-tenant AI lead platform in Go and React; migrated n8n workflows into a high-reliability modular monolith.",
+    location: "South Jakarta",
+    details: [
+      "Architected and built a multi-tenant AI automation platform in Go and React, migrating legacy n8n workflows into a high-reliability modular monolith.",
+      "Engineered a hybrid Conversational AI pipeline integrating WhatsApp (Gupshup) and Voice AI (Retell AI) with OpenAI LLMs for multi-stage lead qualification.",
+      "Implemented multi-tenant RAG using PostgreSQL (pgvector) and OpenAI embeddings, ensuring strict tenant-scoped knowledge isolation.",
+      "Designed a deterministic Funnel Engine & State Machine with Redis & Asynq managing 7-stage scheduled follow-ups and night-window gating.",
+      "Engineered CRM WhatsApp Auto-Message subsystem delivering multi-step WhatsApp template sequences with dual provider support and recovery sweepers.",
+      "Shipped a React & TypeScript admin portal for real-time tenant controls, lead retesting, and tele-manager routing.",
+    ],
   },
   {
     period: "Jul 2025 – Oct 2025",
-    role: "IT Programmer Intern",
+    role: "IT Programmer (Internship)",
     company: "PT. Prakarsa Alam Segar (Wings Food)",
-    result:
-      "Migrated recruitment from Google Drive into an internal system with a real-time applicant dashboard.",
+    location: "Bekasi",
+    details: [
+      "Identified and resolved critical bugs in the HR system infrastructure.",
+      "Led the digital migration of the recruitment process from Google Drive to a centralized internal system.",
+      "Developed a real-time monitoring dashboard using React.js and Firebase to track the status of applicant documents.",
+    ],
   },
   {
     period: "Aug 2024 – Jan 2025",
     role: "Full-Stack Developer",
     company: "Kenzou Drive Thru Car Wash",
-    result:
-      "Shipped a Laravel car-wash app with gamified loyalty and end-to-end admin tooling.",
+    location: "Self-Employed",
+    details: [
+      "Designed and engineered a comprehensive car wash management application for administrators and members using the Laravel framework.",
+      "Implemented gamification features, including XP, Badges, and Vouchers, to significantly enhance user engagement and customer loyalty.",
+      "Validated system functionality through Black-box testing and User Acceptance Testing (UAT) to ensure high-quality software delivery.",
+    ],
   },
   {
     period: "Feb 2023 – Jul 2023",
-    role: "Back-End Developer, MSIB",
+    role: "Back-End Developer (MSIB Participant)",
     company: "Dicoding Indonesia",
-    result:
-      "Built REST APIs with Node.js and professional Git workflows through Dicoding's MSIB program.",
+    location: "Remote",
+    details: [
+      "Mastered professional development workflows including RESTful API architecture, Node.js, and Git.",
+    ],
   },
   {
     period: "Feb 2023 – Mar 2023",
-    role: "IT Support Intern",
+    role: "IT Support Technician (Internship)",
     company: "Bfit Indonesia",
-    result:
-      "Rebuilt warehouse inventory from Blade to Vue and implemented Safety Stock tracking.",
+    location: "East Surabaya",
+    details: [
+      "Handled first-level technical support for hardware and software issues.",
+      "Rebuilt and refactored the warehouse inventory system from Laravel Blade to Vue.js to make it more dynamic.",
+      "Implemented the Safety Stock method to optimize stock tracking.",
+    ],
   },
 ];
 

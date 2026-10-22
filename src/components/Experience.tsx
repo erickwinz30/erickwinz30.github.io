@@ -30,15 +30,31 @@ export const Experience = () => {
                   <h3 className="text-xl font-semibold tracking-[-0.01em] text-foreground md:text-2xl">
                     {item.role}
                   </h3>
-                  <p
-                    data-testid="experience-company"
-                    className="mt-1 text-sm font-medium text-primary"
-                  >
-                    {item.company}
-                  </p>
-                  <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                    {item.result}
-                  </p>
+                  <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm">
+                    <span
+                      data-testid="experience-company"
+                      className="font-medium text-primary"
+                    >
+                      {item.company}
+                    </span>
+                    <span className="text-muted-foreground">
+                      {item.location}
+                    </span>
+                  </div>
+                  <ul className="mt-4 max-w-2xl space-y-2.5">
+                    {item.details.map((detail) => (
+                      <li
+                        key={detail}
+                        className="flex gap-3 text-sm leading-relaxed text-muted-foreground"
+                      >
+                        <span
+                          aria-hidden="true"
+                          className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-primary"
+                        />
+                        <span data-testid="experience-detail">{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
                 <ArrowUpRight
