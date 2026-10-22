@@ -1,55 +1,99 @@
-import { ArrowRight, Download } from "lucide-react";
+import { motion, useReducedMotion } from "motion/react";
+import { ArrowDown, ArrowUpRight, Download } from "lucide-react";
 
-const Hero = () => {
+const ease = [0.22, 1, 0.36, 1] as const;
+
+export const Hero = () => {
+  const reduceMotion = useReducedMotion();
+
   return (
     <section
-      id="home"
-      className="min-h-screen flex items-center justify-center pt-20 px-6 lg:px-8 relative overflow-hidden"
+      id="top"
+      className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden px-6 pb-10 pt-28 lg:px-10"
     >
-      {/* Abstract Background Decoration */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent opacity-10 rounded-full blur-[100px] pointer-events-none"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600 opacity-10 rounded-full blur-[100px] pointer-events-none"></div>
-
-      <div className="max-w-4xl mx-auto text-center z-10">
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
-          Hi, I'm <span className="text-accent">Erick Winata.</span>
-        </h1>
-
-        <h2 className="text-2xl md:text-3xl text-gray-300 font-medium mb-8">
-          Full-Stack & AI Automation Engineer <span className="text-accent px-2">|</span>{" "}
-          Information Systems Graduate
-        </h2>
-
-        <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-          Detail-oriented Information Systems graduate and Fullstack & AI Engineer
-          with a strong foundation in building scalable web applications, Conversational
-          AI pipelines, and multi-tenant automation systems.
+      <div className="mx-auto w-full max-w-[1280px]">
+        <p className="mb-6 text-[11px] font-medium uppercase tracking-[0.24em] text-primary">
+          Full-stack · AI Automation · Backend
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href="#projects"
-            className="group px-8 py-4 bg-accent text-white rounded-lg font-medium flex items-center justify-center gap-2 hover:bg-accent-hover transition-all w-full sm:w-auto hover:-translate-y-1 shadow-lg shadow-accent/25"
-          >
-            View Projects
-            <ArrowRight
-              size={20}
-              className="group-hover:translate-x-1 transition-transform"
-            />
-          </a>
+        <h1 className="grid grid-cols-1">
+          <span className="sr-only">Erick Winata</span>
 
-          <a
-            href="/assets/CV_ATS_ErickWinata_English_17-10-2026.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group px-8 py-4 bg-surface text-gray-200 border border-gray-700 rounded-lg font-medium flex items-center justify-center gap-2 hover:bg-gray-800 transition-all w-full sm:w-auto hover:-translate-y-1"
+          <span
+            aria-hidden="true"
+            className="z-0 block overflow-hidden md:row-start-1"
           >
-            Download CV
-            <Download
-              size={20}
-              className="group-hover:translate-y-1 transition-transform"
-            />
-          </a>
+            <motion.span
+              className="block text-center font-display text-[clamp(56px,15vw,260px)] font-extrabold uppercase leading-[0.82] tracking-[-0.04em]"
+              initial={reduceMotion ? false : { y: 120 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 1, ease, delay: 0.12 }}
+            >
+              Erick
+            </motion.span>
+          </span>
+
+          <motion.img
+            src="/assets/profile_erick.png"
+            alt=""
+            aria-hidden="true"
+            className="relative z-10 mx-auto mt-6 h-[clamp(260px,38vh,440px)] max-h-[440px] w-auto object-contain md:row-start-2 md:mt-0 md:-mt-[clamp(24px,8vw,96px)]"
+            initial={reduceMotion ? false : { opacity: 0, scale: 1.06 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, ease, delay: 0.3 }}
+          />
+
+          <span
+            aria-hidden="true"
+            className="z-20 block overflow-hidden md:row-start-3 md:-mt-[clamp(40px,14vw,160px)]"
+          >
+            <motion.span
+              className="block text-center font-display text-[clamp(56px,15vw,260px)] font-extrabold uppercase leading-[0.82] tracking-[-0.04em]"
+              initial={reduceMotion ? false : { y: 120 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 1, ease, delay: 0.24 }}
+            >
+              Winata
+            </motion.span>
+          </span>
+        </h1>
+
+        <div className="mt-10 flex flex-col gap-6 border-t border-border pt-6 md:flex-row md:items-end md:justify-between">
+          <p className="max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+            I turn messy operations into reliable software — Go backends,
+            multi-tenant AI pipelines, and the interfaces people actually use.
+          </p>
+
+          <div className="flex flex-wrap items-center gap-3">
+            <a
+              href="#work"
+              className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-transform hover:-translate-y-0.5"
+            >
+              See selected work
+              <ArrowDown
+                size={16}
+                className="transition-transform group-hover:translate-y-0.5"
+              />
+            </a>
+            <a
+              href="/assets/CV_ATS_ErickWinata_English_17-10-2026.pdf"
+              className="group inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-primary hover:text-primary"
+            >
+              Download CV
+              <Download
+                size={16}
+                className="transition-transform group-hover:translate-y-0.5"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div className="mt-8 flex items-center justify-between text-[10px] uppercase tracking-[0.24em] text-muted-foreground">
+          <span>East Surabaya, Indonesia</span>
+          <span className="inline-flex items-center gap-2">
+            Scroll
+            <ArrowUpRight size={14} className="rotate-90 text-primary" />
+          </span>
         </div>
       </div>
     </section>
