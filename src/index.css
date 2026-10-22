@@ -1,40 +1,102 @@
 @import "tailwindcss";
 
 @theme {
+  --color-background: hsl(0 0% 6%);
+  --color-foreground: hsl(30 12% 94%);
+  --color-primary: hsl(8 92% 62%);
+  --color-primary-foreground: hsl(0 0% 6%);
+  --color-muted-foreground: hsl(30 4% 58%);
+  --color-border: hsl(0 0% 16%);
+  --color-card: hsl(0 0% 9%);
+  --font-display: "Syne", Impact, sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
-  --color-primary: #0f172a; /* Dark Blue Main Background */
-  --color-surface: #1e293b; /* Card / Component Background */
-  --color-accent: #3b82f6; /* Blue Accent */
-  --color-accent-hover: #2563eb;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
   }
+
   body {
-    @apply bg-primary text-gray-300 antialiased selection:bg-accent selection:text-white;
+    @apply bg-background font-sans text-foreground antialiased;
+    font-weight: 300;
   }
+
+  ::selection {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
+  }
+
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    @apply text-white font-bold tracking-tight;
+    @apply font-display;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
   }
 }
 
-/* Custom scrollbar for webkit */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  @apply bg-primary;
+  @apply bg-background;
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-surface rounded-full;
+  @apply rounded-full bg-border;
 }
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-600;
+  @apply bg-muted-foreground;
+}
+
+.marquee-track {
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+body.custom-cursor,
+body.custom-cursor * {
+  cursor: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .marquee-track {
+    animation-play-state: paused;
+  }
+
+  body.custom-cursor,
+  body.custom-cursor * {
+    cursor: auto !important;
+  }
 }
