@@ -3,18 +3,21 @@ import { motion, useMotionValue, useReducedMotion, useSpring } from "motion/reac
 
 export const CursorDot = () => {
   const reduceMotion = useReducedMotion();
+  const [enabled] = useState(
+    () =>
+      typeof window !== "undefined" &&
+      window.matchMedia("(pointer: fine)").matches &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+  );
   const x = useMotionValue(-100);
   const y = useMotionValue(-100);
   const springX = useSpring(x, { stiffness: 500, damping: 40, mass: 0.4 });
   const springY = useSpring(y, { stiffness: 500, damping: 40, mass: 0.4 });
-  const [active, setActive] = useState(false);
   const [hovering, setHovering] = useState(false);
 
   useEffect(() => {
-    const finePointer = window.matchMedia("(pointer: fine)").matches;
-    if (!finePointer || reduceMotion) return;
+    if (!enabled || reduceMotion) return;
 
-    setActive(true);
     document.body.classList.add("custom-cursor");
 
     const onMove = (event: PointerEvent) => {
@@ -38,9 +41,9 @@ export const CursorDot = () => {
       window.removeEventListener("pointermove", onMove);
       window.removeEventListener("pointerover", onOver);
     };
-  }, [reduceMotion, x, y]);
+  }, [enabled, reduceMotion, x, y]);
 
-  if (!active) return null;
+  if (!enabled || reduceMotion) return null;
 
   return (
     <motion.div

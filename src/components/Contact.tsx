@@ -1,92 +1,66 @@
-import { Mail, Phone, MapPin, Github, Linkedin, Send } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { contact } from "../data/content";
 
-const Contact = () => {
+export const Contact = () => {
   return (
-    <section
-      id="contact"
-      className="py-28 px-6 lg:px-8 border-t border-gray-800"
-    >
-      <div className="max-w-3xl mx-auto text-center">
-        <h3 className="text-sm font-mono text-accent mb-4 tracking-wider">
-          05. What's Next?
-        </h3>
-        <h4 className="text-4xl md:text-5xl font-bold text-white mb-6">
-          Let's Connect!
-        </h4>
-
-        <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-          Interested in collaborating or have a suitable career opportunity? I
-          am very open to discussing with you. Reach out to me via email or
-          social media below.
-        </p>
-
-        <a
-          href="mailto:erickwinz1008@gmail.com"
-          className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border border-accent text-accent rounded-lg font-medium hover:bg-accent/10 transition-colors"
-        >
-          <Send size={20} />
-          Send Email
-        </a>
-
-        <div className="mt-20 flex justify-center divide-x divide-gray-800">
-          <div className="px-6 flex flex-col items-center group">
-            <Mail
-              className="text-gray-500 mb-3 group-hover:text-accent transition-colors"
-              size={24}
-            />
-            <span className="text-sm text-gray-400 cursor-copy hover:text-gray-200">
-              erickwinz1008@gmail.com
-            </span>
-          </div>
-          <div className="px-6 flex flex-col items-center group">
-            <Phone
-              className="text-gray-500 mb-3 group-hover:text-accent transition-colors"
-              size={24}
-            />
-            <span className="text-sm text-gray-400 text-center">
-              +62 818-5700-17
-            </span>
-          </div>
-          <div className="px-6 flex flex-col items-center group hidden md:flex">
-            <MapPin
-              className="text-gray-500 mb-3 group-hover:text-accent transition-colors"
-              size={24}
-            />
-            <span className="text-sm text-gray-400 text-center">
-              East Surabaya
-              <br />
-              Indonesia
-            </span>
-          </div>
+    <section id="contact" className="bg-primary px-6 py-20 text-primary-foreground lg:px-10 lg:py-32">
+      <div className="mx-auto grid max-w-[1280px] gap-12 md:grid-cols-[1.1fr_0.9fr] md:gap-20">
+        <div>
+          <p className="mb-5 text-[11px] font-medium uppercase tracking-[0.24em] text-primary-foreground/70">
+            Contact
+          </p>
+          <h2 className="text-[clamp(34px,5vw,72px)] font-semibold leading-[0.98] tracking-[-0.03em]">
+            Let's talk about the problem.
+          </h2>
         </div>
 
-        <div className="mt-16 flex items-center justify-center gap-6">
-          <a
-            href="https://linkedin.com/in/erick-winata-b59581235/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-500 hover:text-accent transition-colors hover:-translate-y-1 transform duration-300"
-            aria-label="LinkedIn Profile"
-          >
-            <Linkedin size={28} />
-          </a>
-          <a
-            href="https://github.com/erickwinz30"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-500 hover:text-accent transition-colors hover:-translate-y-1 transform duration-300"
-            aria-label="GitHub Profile"
-          >
-            <Github size={28} />
-          </a>
-        </div>
-      </div>
+        <div className="flex flex-col justify-end">
+          <p className="max-w-md text-base leading-relaxed text-primary-foreground/80 md:text-lg">
+            Hiring, or have a project in mind? Tell me the role, the scope, and
+            the constraint that matters most. A short note is enough.
+          </p>
 
-      {/* Footer Note */}
-      <div className="text-center mt-24 mb-6">
-        <p className="text-sm text-gray-600 font-mono flex items-center justify-center gap-2">
-          © 2026 Erick Winata. Built with Tailwind CSS.
-        </p>
+          <a
+            href={`mailto:${contact.email}`}
+            className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-primary-foreground px-6 py-3.5 text-sm font-medium text-primary transition-transform hover:-translate-y-0.5"
+          >
+            {contact.email}
+            <ArrowUpRight size={16} />
+          </a>
+
+          <div className="mt-8 flex flex-wrap gap-6 border-t border-primary-foreground/20 pt-6">
+            <a
+              href={contact.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-1.5 text-sm font-medium transition-opacity hover:opacity-70"
+            >
+              LinkedIn
+              <ArrowUpRight
+                size={14}
+                className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              />
+            </a>
+            <a
+              href={contact.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-1.5 text-sm font-medium transition-opacity hover:opacity-70"
+            >
+              GitHub
+              <ArrowUpRight
+                size={14}
+                className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              />
+            </a>
+          </div>
+
+          <div className="mt-8 flex flex-col gap-2 text-[11px] uppercase tracking-[0.16em] text-primary-foreground/70 sm:flex-row sm:items-center sm:gap-4">
+            <span>{contact.location}</span>
+            <span className="hidden h-1 w-1 rounded-full bg-primary-foreground/50 sm:block" />
+            <span>{contact.availability}</span>
+          </div>
+        </div>
       </div>
     </section>
   );
