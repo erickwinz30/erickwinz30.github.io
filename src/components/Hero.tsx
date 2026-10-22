@@ -25,7 +25,7 @@ export const Hero = () => {
             className="z-0 block overflow-hidden md:row-start-1"
           >
             <motion.span
-              className="block text-center font-display text-[clamp(44px,13vw,260px)] font-extrabold uppercase leading-[0.82] tracking-[-0.04em]"
+              className="block text-center font-display text-[clamp(44px,13vw,194px)] font-extrabold uppercase leading-[0.82] tracking-[-0.04em]"
               initial={reduceMotion ? false : { y: 120 }}
               animate={{ y: 0 }}
               transition={{ duration: 1, ease, delay: 0.12 }}
@@ -51,7 +51,7 @@ export const Hero = () => {
             className="z-20 row-start-2 block overflow-hidden md:row-start-3 md:-mt-[clamp(32px,8vw,120px)]"
           >
             <motion.span
-              className="block text-center font-display text-[clamp(44px,13vw,260px)] font-extrabold uppercase leading-[0.82] tracking-[-0.04em]"
+              className="block text-center font-display text-[clamp(44px,13vw,194px)] font-extrabold uppercase leading-[0.82] tracking-[-0.04em]"
               initial={reduceMotion ? false : { y: 120 }}
               animate={{ y: 0 }}
               transition={{ duration: 1, ease, delay: 0.24 }}
