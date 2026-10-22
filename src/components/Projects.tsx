@@ -1,155 +1,160 @@
-import { Folder, ExternalLink, Github } from "lucide-react";
+import { useState } from "react";
+import { ArrowUpRight, ExternalLink, Github } from "lucide-react";
+import { projects } from "../data/content";
+import { Reveal } from "./ui/Reveal";
 
-const projects = [
-  {
-    title: "Real-Estate AI Call & Chatbot Platform",
-    description:
-      "An end-to-end conversational AI and lead automation platform built to qualify prospective property buyers and schedule site visits 24/7. Integrates WhatsApp Chatbot and AI Voice Calling to answer project-specific inquiries via multi-tenant RAG, execute deterministic 7-stage scheduled follow-ups, and automate CRM sales outreach.",
-    techStack: ["Go", "PostgreSQL", "pgvector", "Redis", "Asynq", "React", "TypeScript", "OpenAI", "Retell AI", "Gupshup"],
-    githubLink: "",
-    externalLink: "",
-    image: "",
-  },
-  {
-    title: "Attendance App",
-    description:
-      "A full-stack web application for employee attendance management using QR code technology. Features include real-time tracking and role-based access control (Employee, HRD, Scanner).",
-    techStack: ["React", "Golang", "PostgreSQL"],
-    githubLink: "https://github.com/erickwinz30/attendance-app-frontend",
-    externalLink: "",
-    image: "/assets/img/portfolio/attendance-app/home.png",
-  },
-  {
-    title: "Simple Ecommerce",
-    description:
-      "A full-stack mobile e-commerce application for computer hardware products. Features include a shopping cart, Midtrans payment integration, and an admin dashboard.",
-    techStack: ["Ionic", "Vue", "Firebase"],
-    githubLink: "https://github.com/erickwinz30/computers-ecommerce-ionic",
-    externalLink: "https://computers-ecommerce.web.app",
-    image: "/assets/img/portfolio/ionic-ecommerce/iPhone-13-PRO-home.png",
-  },
-  {
-    title: "Internal HR & Employee Onboarding System",
-    description:
-      "An exclusive internal tool for the HR department (Wingsfood Internship Project). Optimized the document collection workflow with a direct file upload interface and Excel-based autofill features.",
-    techStack: ["Laravel", "ReactJS", "Firebase", "MySQL"],
-    githubLink: "",
-    externalLink: "",
-    image: "",
-  },
-  {
-    title: "Kenzou Drive Thru Car Wash",
-    description:
-      "A full-stack car wash management application for admins and members. Integrated gamification features to increase user engagement.",
-    techStack: ["Laravel", "Blade", "MySQL"],
-    githubLink: "",
-    externalLink: "",
-    image: "/assets/img/portfolio/kenzou-app-screenshot/customers-homepage.png",
-  },
-  {
-    title: "Calculus - Calorie Tracking App",
-    description:
-      "Dicoding MSIB Capstone Project. Took full responsibility for database schema design, authentication, and back-end logic.",
-    techStack: ["Laravel", "Blade", "MySQL"],
-    githubLink: "https://github.com/erickwinz30/Calculus",
-    externalLink: "",
-    image: "/assets/img/portfolio/calculus-screenshot/homepage-view.png",
-  },
-  {
-    title: "Warehouse Inventory",
-    description:
-      "A comprehensive Warehouse Inventory System to streamline stock tracking. Built with Laravel and refactored the frontend to Vue.js, implementing the Safety Stock method to optimize inventory management.",
-    techStack: ["Laravel", "Vue.js"],
-    githubLink: "",
-    externalLink: "",
-    image: "/assets/img/portfolio/bfit-gudang-screenshot/home.png",
-  },
-];
+export const Projects = () => {
+  const [openBreakdown, setOpenBreakdown] = useState<string | null>(null);
 
-const Projects = () => {
   return (
-    <section id="projects" className="py-20 px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        <h3 className="text-3xl md:text-4xl font-bold text-white mb-12 flex items-center gap-4">
-          <span className="text-accent text-2xl">04.</span> Featured Projects
-          <div className="h-[1px] bg-gray-700 flex-grow ml-4 hidden md:block"></div>
-        </h3>
+    <section id="work" className="border-b border-border px-6 py-20 lg:px-10 lg:py-32">
+      <div className="mx-auto max-w-[1280px]">
+        <div className="mb-14 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.24em] text-primary">
+              Selected work
+            </p>
+            <h2 className="text-[clamp(30px,4vw,60px)] font-semibold leading-none tracking-[-0.02em]">
+              Selected <em className="italic text-primary">work</em>.
+            </h2>
+          </div>
+          <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
+            Four systems, built end to end. The flagship platform is available
+            as a short technical breakdown.
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="bg-surface rounded-xl flex flex-col h-full border border-gray-800 hover:border-accent hover:-translate-y-2 transition-all duration-300 group shadow-lg overflow-hidden"
-            >
-              {project.image ? (
-                <div className="relative h-48 sm:h-56 overflow-hidden bg-primary border-b border-gray-800">
-                  <div className="absolute inset-0 bg-primary/50 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                </div>
-              ) : null}
+        <div className="grid gap-x-8 gap-y-16 md:grid-cols-2">
+          {projects.map((project, index) => {
+            const isOpen = openBreakdown === project.id;
 
-              <div className="p-8 flex flex-col flex-grow">
-                <div className="flex justify-between items-center mb-6">
-                  {!project.image && (
-                    <Folder size={36} className="text-accent" />
-                  )}
-                  {project.image && (
-                    <span className="text-accent text-xs font-mono font-medium tracking-wider uppercase">
-                      Featured Project
+            return (
+              <Reveal key={project.id} delay={index * 0.06}>
+                <article className="group relative flex h-full flex-col">
+                  {project.href ? (
+                    <a
+                      href={project.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Open ${project.title}`}
+                      data-cursor="view"
+                      className="absolute inset-0 z-10"
+                    />
+                  ) : null}
+
+                  <div className="relative aspect-[16/10] overflow-hidden border border-border bg-card">
+                    {project.image ? (
+                      <img
+                        src={project.image}
+                        alt={`${project.title} screenshot`}
+                        loading="lazy"
+                        className="h-full w-full object-cover object-top transition-transform duration-[900ms] ease-out group-hover:scale-105"
+                      />
+                    ) : (
+                      <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-[radial-gradient(circle_at_70%_20%,hsl(8_92%_62%/0.28),transparent_55%)]">
+                        <span className="font-display text-[clamp(120px,18vw,260px)] font-extrabold leading-none tracking-[-0.06em] text-primary">
+                          {project.panel}
+                        </span>
+                        <span className="absolute left-5 top-5 text-[10px] uppercase tracking-[0.24em] text-muted-foreground">
+                          AI Platform
+                        </span>
+                        <span className="absolute bottom-5 right-5 text-[10px] uppercase tracking-[0.24em] text-muted-foreground">
+                          Go + React
+                        </span>
+                      </div>
+                    )}
+                    <span className="absolute right-5 top-5 z-20 font-display text-sm font-semibold text-primary">
+                      {project.index}
                     </span>
-                  )}
-                  <div className="flex items-center gap-4 ml-auto">
-                    {project.githubLink && (
-                      <a
-                        href={project.githubLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-accent transition-colors"
-                        aria-label="GitHub Repository"
-                      >
-                        <Github size={20} />
-                      </a>
-                    )}
-                    {project.externalLink && (
-                      <a
-                        href={project.externalLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-accent transition-colors"
-                        aria-label="External Link"
-                      >
-                        <ExternalLink size={20} />
-                      </a>
-                    )}
                   </div>
-                </div>
 
-                <h4 className="text-xl font-bold text-gray-200 mb-3 group-hover:text-accent transition-colors">
-                  {project.title}
-                </h4>
+                  <div className="flex flex-1 flex-col border-b border-border pb-6 pt-5">
+                    <h3 className="text-2xl font-semibold tracking-[-0.02em] text-foreground md:text-3xl">
+                      {project.title}
+                    </h3>
+                    <p className="mt-3 max-w-xl leading-relaxed text-muted-foreground">
+                      {project.description}
+                    </p>
 
-                <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
-                  {project.description}
-                </p>
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {project.stack.map((tech) => (
+                        <span
+                          key={tech}
+                          className="border border-border px-2.5 py-1 text-[10px] uppercase tracking-[0.12em] text-muted-foreground"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
 
-                <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-gray-800 border-opacity-50">
-                  {project.techStack.map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className="text-xs font-mono text-gray-300 bg-primary px-2 py-1 rounded"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
+                    <div className="relative z-20 mt-6 flex flex-wrap items-center gap-5">
+                      {project.href ? (
+                        <a
+                          href={project.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.12em] text-foreground transition-colors hover:text-primary"
+                        >
+                          <Github size={15} />
+                          GitHub
+                        </a>
+                      ) : null}
+                      {project.demoHref ? (
+                        <a
+                          href={project.demoHref}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.12em] text-foreground transition-colors hover:text-primary"
+                        >
+                          <ExternalLink size={15} />
+                          Live demo
+                        </a>
+                      ) : null}
+                      {project.breakdown ? (
+                        <button
+                          type="button"
+                          aria-expanded={isOpen}
+                          aria-controls={`breakdown-${project.id}`}
+                          onClick={() =>
+                            setOpenBreakdown(isOpen ? null : project.id)
+                          }
+                          className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.12em] text-primary"
+                        >
+                          {isOpen ? "Close breakdown" : "Read the breakdown"}
+                          <ArrowUpRight
+                            size={15}
+                            className={`transition-transform ${
+                              isOpen ? "rotate-90" : ""
+                            }`}
+                          />
+                        </button>
+                      ) : null}
+                    </div>
+
+                    {project.breakdown ? (
+                      <div
+                        id={`breakdown-${project.id}`}
+                        hidden={!isOpen}
+                        className="mt-6 border-t border-border pt-5"
+                      >
+                        <ul className="space-y-3">
+                          {project.breakdown.map((point) => (
+                            <li
+                              key={point}
+                              className="flex gap-3 text-sm leading-relaxed text-muted-foreground"
+                            >
+                              <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
+                              {point}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ) : null}
+                  </div>
+                </article>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>
