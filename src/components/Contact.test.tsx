@@ -16,6 +16,7 @@ describe("Contact", () => {
       screen.getByRole("link", { name: "Chat on WhatsApp" }),
     ).toHaveAttribute("href", "https://wa.me/62818570017");
     expect(screen.getByText(/East Surabaya, Indonesia/)).toBeInTheDocument();
+    expect(screen.getByText("+62 818-5700-17")).toBeInTheDocument();
   });
 });
 
@@ -35,6 +36,8 @@ describe("Footer", () => {
       "href",
       "https://github.com/erickwinz30",
     );
-    expect(screen.getByText("© 2026")).toBeInTheDocument();
+    expect(
+      screen.getByText("© 2026 Erick Winata · Built with Tailwind CSS"),
+    ).toBeInTheDocument();
   });
 });

@@ -48,6 +48,7 @@ export interface Fact {
 
 export interface Contact {
   email: string;
+  phone: string;
   whatsapp: string;
   location: string;
   availability: string;
@@ -91,10 +92,21 @@ export const projects: Project[] = [
   {
     id: "99co",
     index: "01",
-    title: "99.co — Real-Estate AI Platform",
+    title: "99.co — Real-Estate AI Call & Chatbot Platform",
     description:
       "An end-to-end conversational AI and lead automation platform built to qualify prospective property buyers and schedule site visits 24/7. Integrates WhatsApp Chatbot and AI Voice Calling to answer project-specific inquiries via multi-tenant RAG, execute deterministic 7-stage scheduled follow-ups, and automate CRM sales outreach.",
-    stack: ["Go", "PostgreSQL", "pgvector", "Redis", "React", "OpenAI"],
+    stack: [
+      "Go",
+      "PostgreSQL",
+      "pgvector",
+      "Redis",
+      "Asynq",
+      "React",
+      "TypeScript",
+      "OpenAI",
+      "Retell AI",
+      "Gupshup",
+    ],
     panel: "99",
     panelLabel: "AI Platform",
     panelMeta: "Go + React",
@@ -112,7 +124,7 @@ export const projects: Project[] = [
     title: "Attendance App",
     description:
       "A full-stack web application for employee attendance management using QR code technology. Features include real-time tracking and role-based access control (Employee, HRD, Scanner).",
-    stack: ["React", "Go", "PostgreSQL"],
+    stack: ["React", "Golang", "PostgreSQL"],
     image: "/assets/img/portfolio/attendance-app/home.png",
     imageWidth: 1920,
     imageHeight: 968,
@@ -145,7 +157,7 @@ export const projects: Project[] = [
   {
     id: "kenzou",
     index: "05",
-    title: "Kenzou Car Wash",
+    title: "Kenzou Drive Thru Car Wash",
     description:
       "A full-stack car wash management application for admins and members. Integrated gamification features to increase user engagement.",
     stack: ["Laravel", "Blade", "MySQL"],
@@ -240,39 +252,63 @@ export const experience: ExperienceItem[] = [
 export const skillGroups: SkillGroup[] = [
   {
     index: "01",
-    title: "Backend & Data",
-    skills: [
-      "Go",
-      "PostgreSQL",
-      "pgvector",
-      "Redis",
-      "Asynq",
-      "MySQL",
-      "SQLite",
-    ],
+    title: "Programming Languages",
+    skills: ["Go (Golang)", "PHP", "JavaScript", "TypeScript", "SQL"],
   },
   {
     index: "02",
-    title: "AI & Automation",
+    title: "Front-end Development",
     skills: [
-      "OpenAI API",
-      "RAG",
-      "Retell AI",
-      "WhatsApp Business API",
-      "n8n",
+      "React",
+      "Vue.js",
+      "Tailwind CSS",
+      "Bootstrap",
+      "HTML5",
+      "CSS3",
     ],
   },
   {
     index: "03",
-    title: "Frontend & Delivery",
+    title: "Back-end & Architecture",
     skills: [
-      "React",
-      "TypeScript",
-      "Vue",
-      "Tailwind CSS",
+      "Go / Chi / Huma",
       "Laravel",
+      "Node.js",
+      "RESTful API",
+      "State Machines & Queues",
+    ],
+  },
+  {
+    index: "04",
+    title: "AI & Workflow Automation",
+    skills: [
+      "n8n (Workflow Automation)",
+      "OpenAI API (LLMs & Embeddings)",
+      "RAG & pgvector",
+      "Retell AI (Voice AI)",
+      "WhatsApp Business API",
+    ],
+  },
+  {
+    index: "05",
+    title: "Database Management",
+    skills: [
+      "PostgreSQL & pgvector",
+      "Redis & Asynq",
+      "MySQL",
+      "SQLite",
+      "Firebase",
+    ],
+  },
+  {
+    index: "06",
+    title: "Tools & Methods",
+    skills: [
       "Docker",
-      "Git",
+      "Git/GitHub",
+      "AI-Assisted (Vibe Coding)",
+      "UML (draw.io/Lucidchart)",
+      "SDLC (Waterfall/Prototyping)",
     ],
   },
 ];
@@ -284,14 +320,25 @@ export const productionFacts: Fact[] = [
   { value: "3", label: "core languages" },
 ];
 
+export const bioIntro = {
+  before:
+    "I'm a Full-Stack & AI Automation Engineer and an Information Systems graduate from ",
+  link: {
+    label: "Dinamika University (STIKOM Surabaya)",
+    href: "https://dinamika.ac.id/",
+  },
+  after:
+    ". I like the part of the job where a messy process becomes a system that behaves predictably.",
+};
+
 export const bioParagraphs: string[] = [
-  "I'm a Full-Stack & AI Automation Engineer and an Information Systems graduate from Dinamika University. I like the part of the job where a messy process becomes a system that behaves predictably.",
   "Most of my work sits between backend architecture and applied AI: Go services, multi-tenant RAG, WhatsApp and voice pipelines, and the React dashboards that make them usable. I've also shipped Laravel and Vue products end to end.",
   "I work across the full SDLC, use AI-assisted engineering to move faster, and keep architecture, data integrity and edge cases under human review. Based in East Surabaya, open to full-time roles and freelance work.",
 ];
 
 export const contact: Contact = {
   email: "erickwinz1008@gmail.com",
+  phone: "+62 818-5700-17",
   whatsapp: "62818570017",
   location: "East Surabaya, Indonesia",
   availability: "Open to full-time roles and freelance work",

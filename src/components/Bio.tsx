@@ -1,8 +1,6 @@
 import { ArrowUpRight, Download } from "lucide-react";
-import { bioParagraphs, contact } from "../data/content";
+import { bioIntro, bioParagraphs, contact } from "../data/content";
 import { Reveal } from "./ui/Reveal";
-
-const cvHref = "/assets/CV_ATS_ErickWinata_English_17-10-2026.pdf";
 
 export const Bio = () => {
   return (
@@ -33,6 +31,18 @@ export const Bio = () => {
           </h2>
 
           <div className="space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg">
+            <p>
+              {bioIntro.before}
+              <a
+                href={bioIntro.link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground underline decoration-primary/60 underline-offset-4 transition-colors hover:text-primary"
+              >
+                {bioIntro.link.label}
+              </a>
+              {bioIntro.after}
+            </p>
             {bioParagraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
@@ -40,7 +50,7 @@ export const Bio = () => {
 
           <div className="mt-10 flex flex-wrap items-center gap-6">
             <a
-              href={cvHref}
+              href={contact.cv}
               className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-transform hover:-translate-y-0.5"
             >
               Download CV

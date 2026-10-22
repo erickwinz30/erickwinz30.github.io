@@ -68,6 +68,7 @@ export const Contact = () => {
           </div>
 
           <div className="mt-8 flex flex-col gap-1.5 text-[11px] uppercase tracking-[0.14em] text-primary-foreground/70">
+            <span>{contact.phone}</span>
             <span>{contact.location}</span>
             <span>{contact.availability}</span>
           </div>

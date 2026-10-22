@@ -31,6 +31,9 @@ describe("Bio", () => {
     expect(screen.getByRole("heading", { name: "About Erick." })).toBeInTheDocument();
     expect(screen.getByAltText("Erick Winata")).toBeInTheDocument();
     expect(screen.getByText(/Information Systems graduate/i)).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: "Dinamika University (STIKOM Surabaya)" }),
+    ).toHaveAttribute("href", "https://dinamika.ac.id/");
     expect(screen.getByRole("link", { name: "Download CV" })).toHaveAttribute(
       "href",
       "/assets/CV_ATS_ErickWinata_English_17-10-2026.pdf",

@@ -39,7 +39,9 @@ export const Footer = () => {
           >
             GitHub
           </a>
-          <span>© 2026</span>
+          <span className="normal-case">
+            © 2026 Erick Winata · Built with Tailwind CSS
+          </span>
         </div>
       </div>
     </footer>

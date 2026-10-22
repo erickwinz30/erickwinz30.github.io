@@ -16,7 +16,9 @@ describe("Projects", () => {
         name: "Internal HR & Employee Onboarding System",
       }),
     ).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Kenzou Car Wash" })).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: "Kenzou Drive Thru Car Wash" }),
+    ).toBeInTheDocument();
     expect(
       screen.getByRole("heading", { name: "Calculus - Calorie Tracking App" }),
     ).toBeInTheDocument();
@@ -24,6 +26,10 @@ describe("Projects", () => {
       screen.getByRole("heading", { name: "Warehouse Inventory" }),
     ).toBeInTheDocument();
     expect(screen.getByText(/computer hardware products/i)).toBeInTheDocument();
+    expect(screen.getByText("Asynq")).toBeInTheDocument();
+    expect(screen.getByText("Retell AI")).toBeInTheDocument();
+    expect(screen.getByText("Gupshup")).toBeInTheDocument();
+    expect(screen.getByText("Golang")).toBeInTheDocument();
   });
 
   it("opens the flagship technical breakdown for keyboard users", async () => {

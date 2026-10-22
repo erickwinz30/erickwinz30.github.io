@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  bioIntro,
   bioParagraphs,
   contact,
   experience,
@@ -52,15 +53,18 @@ describe("portfolio content", () => {
     );
   });
 
-  it("lists all five roles and three skill groups", () => {
+  it("lists all five roles and all six original skill groups", () => {
     expect(experience).toHaveLength(5);
-    expect(skillGroups).toHaveLength(3);
+    expect(skillGroups).toHaveLength(6);
+    expect(skillGroups.flatMap((group) => group.skills)).toHaveLength(31);
     expect(services).toHaveLength(3);
-    expect(bioParagraphs).toHaveLength(3);
+    expect(bioIntro.link.href).toBe("https://dinamika.ac.id/");
+    expect(bioParagraphs).toHaveLength(2);
   });
 
-  it("uses the real contact address and WhatsApp number", () => {
+  it("uses the real contact address, phone, and WhatsApp number", () => {
     expect(contact.email).toBe("erickwinz1008@gmail.com");
+    expect(contact.phone).toBe("+62 818-5700-17");
     expect(contact.whatsapp).toBe("62818570017");
     expect(contact.location).toContain("Surabaya");
   });
