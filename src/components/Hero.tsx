@@ -9,10 +9,10 @@ export const Hero = () => {
   return (
     <section
       id="top"
-      className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden px-6 pb-10 pt-28 lg:px-10"
+      className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden px-6 pb-10 pt-24 lg:px-10"
     >
       <div className="mx-auto w-full max-w-[1280px]">
-        <p className="mb-6 text-[11px] font-medium uppercase tracking-[0.24em] text-primary">
+        <p className="mb-6 text-[10px] font-medium uppercase tracking-[0.18em] text-primary md:text-[11px] md:tracking-[0.24em]">
           Full-stack · AI Automation · Backend
         </p>
 
@@ -24,7 +24,7 @@ export const Hero = () => {
             className="z-0 block overflow-hidden md:row-start-1"
           >
             <motion.span
-              className="block text-center font-display text-[clamp(56px,15vw,260px)] font-extrabold uppercase leading-[0.82] tracking-[-0.04em]"
+              className="block text-center font-display text-[clamp(44px,13vw,260px)] font-extrabold uppercase leading-[0.82] tracking-[-0.04em]"
               initial={reduceMotion ? false : { y: 120 }}
               animate={{ y: 0 }}
               transition={{ duration: 1, ease, delay: 0.12 }}
@@ -37,7 +37,9 @@ export const Hero = () => {
             src="/assets/profile_erick.png"
             alt=""
             aria-hidden="true"
-            className="relative z-10 mx-auto mt-6 h-[clamp(260px,38vh,440px)] max-h-[440px] w-auto object-contain md:row-start-2 md:mt-0 md:-mt-[clamp(24px,8vw,96px)]"
+            width={354}
+            height={472}
+            className="relative z-10 row-start-3 mx-auto mt-8 h-[clamp(280px,38vh,440px)] max-h-[440px] w-auto object-contain md:row-start-2 md:-mt-[clamp(24px,4.5vw,64px)]"
             initial={reduceMotion ? false : { opacity: 0, scale: 1.06 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease, delay: 0.3 }}
@@ -45,10 +47,10 @@ export const Hero = () => {
 
           <span
             aria-hidden="true"
-            className="z-20 block overflow-hidden md:row-start-3 md:-mt-[clamp(40px,14vw,160px)]"
+            className="z-20 row-start-2 block overflow-hidden md:row-start-3 md:-mt-[clamp(32px,8vw,120px)]"
           >
             <motion.span
-              className="block text-center font-display text-[clamp(56px,15vw,260px)] font-extrabold uppercase leading-[0.82] tracking-[-0.04em]"
+              className="block text-center font-display text-[clamp(44px,13vw,260px)] font-extrabold uppercase leading-[0.82] tracking-[-0.04em]"
               initial={reduceMotion ? false : { y: 120 }}
               animate={{ y: 0 }}
               transition={{ duration: 1, ease, delay: 0.24 }}
@@ -67,7 +69,7 @@ export const Hero = () => {
           <div className="flex flex-wrap items-center gap-3">
             <a
               href="#work"
-              className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-transform hover:-translate-y-0.5"
+              className="group inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-transform hover:-translate-y-0.5"
             >
               See selected work
               <ArrowDown
@@ -77,7 +79,7 @@ export const Hero = () => {
             </a>
             <a
               href="/assets/CV_ATS_ErickWinata_English_17-10-2026.pdf"
-              className="group inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-primary hover:text-primary"
+              className="group inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-primary hover:text-primary"
             >
               Download CV
               <Download

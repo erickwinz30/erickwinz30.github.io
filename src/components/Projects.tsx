@@ -47,6 +47,8 @@ export const Projects = () => {
                       <img
                         src={project.image}
                         alt={`${project.title} screenshot`}
+                        width={project.imageWidth}
+                        height={project.imageHeight}
                         loading="lazy"
                         className="h-full w-full object-cover object-top transition-transform duration-[900ms] ease-out group-hover:scale-105"
                       />

@@ -9,14 +9,16 @@ export const Bio = () => {
     <section id="about" className="border-b border-border px-6 py-20 lg:px-10 lg:py-32">
       <div className="mx-auto grid max-w-[1280px] gap-14 md:grid-cols-[0.8fr_1.2fr] md:items-start md:gap-20">
         <Reveal>
-          <div className="relative mx-auto w-full max-w-[420px] md:mx-0">
+          <div className="relative mx-auto w-full max-w-[330px] md:mx-0">
             <div className="absolute inset-0 scale-90 rounded-full bg-primary/20 blur-3xl" />
-            <div className="relative overflow-hidden border border-border bg-card">
+            <div className="relative aspect-[354/472] overflow-hidden border border-border bg-card">
               <img
                 src="/assets/profile_erick.png"
                 alt="Erick Winata"
+                width={354}
+                height={472}
                 loading="lazy"
-                className="mx-auto h-auto max-h-[440px] w-full object-contain"
+                className="h-full w-full object-cover"
               />
             </div>
           </div>

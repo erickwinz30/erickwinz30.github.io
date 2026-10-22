@@ -17,6 +17,8 @@ export interface Project {
   description: string;
   stack: string[];
   image?: string;
+  imageWidth?: number;
+  imageHeight?: number;
   panel?: string;
   href?: string;
   demoHref?: string;
@@ -105,6 +107,8 @@ export const projects: Project[] = [
       "QR attendance with real-time tracking and role-based access for employees, HR and scanners.",
     stack: ["React", "Go", "PostgreSQL"],
     image: "/assets/img/portfolio/attendance-app/home.png",
+    imageWidth: 1920,
+    imageHeight: 968,
     href: "https://github.com/erickwinz30/attendance-app-frontend",
   },
   {
@@ -115,6 +119,8 @@ export const projects: Project[] = [
       "Mobile storefront with cart, Midtrans checkout and an admin dashboard.",
     stack: ["Ionic", "Vue", "Firebase"],
     image: "/assets/img/portfolio/ionic-ecommerce/iPhone-13-PRO-home.png",
+    imageWidth: 858,
+    imageHeight: 1744,
     href: "https://github.com/erickwinz30/computers-ecommerce-ionic",
     demoHref: "https://computers-ecommerce.web.app",
   },
@@ -126,6 +132,8 @@ export const projects: Project[] = [
       "Laravel management app with XP, badges, vouchers and leaderboards built for customer retention.",
     stack: ["Laravel", "Blade", "MySQL"],
     image: "/assets/img/portfolio/kenzou-app-screenshot/customers-homepage.png",
+    imageWidth: 400,
+    imageHeight: 897,
   },
 ];
 

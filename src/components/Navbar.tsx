@@ -49,7 +49,7 @@ export const Navbar = () => {
     >
       <nav
         aria-label="Primary"
-        className="mx-auto flex h-full max-w-[1280px] items-center justify-end px-6 lg:px-10"
+        className="relative z-50 mx-auto flex h-full max-w-[1280px] items-center justify-end px-6 lg:px-10"
       >
         <div className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (

@@ -55,9 +55,8 @@ export const Contact = () => {
             </a>
           </div>
 
-          <div className="mt-8 flex flex-col gap-2 text-[11px] uppercase tracking-[0.16em] text-primary-foreground/70 sm:flex-row sm:items-center sm:gap-4">
+          <div className="mt-8 flex flex-col gap-1.5 text-[11px] uppercase tracking-[0.14em] text-primary-foreground/70">
             <span>{contact.location}</span>
-            <span className="hidden h-1 w-1 rounded-full bg-primary-foreground/50 sm:block" />
             <span>{contact.availability}</span>
           </div>
         </div>
