@@ -7,7 +7,7 @@ afterEach(() => cleanup());
 Object.defineProperty(window, "matchMedia", {
   writable: true,
   value: vi.fn().mockImplementation((query: string) => ({
-    matches: false,
+    matches: query.includes("pointer: fine"),
     media: query,
     onchange: null,
     addListener: vi.fn(),
