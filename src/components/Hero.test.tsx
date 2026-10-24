@@ -23,7 +23,7 @@ describe("Hero", () => {
     );
     expect(screen.getByRole("link", { name: "Download CV" })).toHaveAttribute(
       "href",
-      "/assets/CV_ATS_ErickWinata_English_17-10-2026.pdf",
+      "/assets/CV_ATS_ErickWinata_English_25-10-2026.pdf",
     );
   });
 });

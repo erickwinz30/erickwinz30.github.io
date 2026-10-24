@@ -197,8 +197,8 @@ export const experience: ExperienceItem[] = [
     company: "99.co",
     location: "South Jakarta",
     details: [
-      "Architected and built a multi-tenant AI automation platform in Go and React, migrating legacy n8n workflows into a high-reliability modular monolith.",
-      "Engineered a hybrid Conversational AI pipeline integrating WhatsApp (Gupshup) and Voice AI (Retell AI) with OpenAI LLMs for multi-stage lead qualification.",
+      "Took over an existing production n8n lead-automation stack, then architected and built its Go/React replacement — cutting processing latency from 1–2 minutes to seconds and eliminating low-code execution errors.",
+      "Engineered a hybrid Conversational AI pipeline integrating WhatsApp (Gupshup) and Voice AI (Retell AI) with OpenAI LLMs for multi-stage lead qualification, driving a 5x increase in lead connectivity and a 3x boost in customer interest.",
       "Implemented multi-tenant RAG using PostgreSQL (pgvector) and OpenAI embeddings, ensuring strict tenant-scoped knowledge isolation.",
       "Designed a deterministic Funnel Engine & State Machine with Redis & Asynq managing 7-stage scheduled follow-ups and night-window gating.",
       "Engineered CRM WhatsApp Auto-Message subsystem delivering multi-step WhatsApp template sequences with dual provider support and recovery sweepers.",
@@ -220,8 +220,9 @@ export const experience: ExperienceItem[] = [
     period: "Aug 2024 – Jan 2025",
     role: "Full-Stack Developer",
     company: "Kenzou Drive Thru Car Wash",
-    location: "Self-Employed",
+    location: "Surabaya",
     details: [
+      "Applied the Prototyping model and UML modeling to align requirements and system design with business objectives.",
       "Designed and engineered a comprehensive car wash management application for administrators and members using the Laravel framework.",
       "Implemented gamification features, including XP, Badges, and Vouchers, to significantly enhance user engagement and customer loyalty.",
       "Validated system functionality through Black-box testing and User Acceptance Testing (UAT) to ensure high-quality software delivery.",
@@ -229,11 +230,13 @@ export const experience: ExperienceItem[] = [
   },
   {
     period: "Feb 2023 – Jul 2023",
-    role: "Back-End Developer (MSIB Participant)",
+    role: "Back-End & Full-Stack Developer (MSIB Batch 4)",
     company: "Dicoding Indonesia",
     location: "Remote",
     details: [
+      "Selected for the MSIB Batch 4 independent study program, specializing in Full-Stack Web Development.",
       "Mastered professional development workflows including RESTful API architecture, Node.js, and Git.",
+      "Built the \"Calculus\" calorie-tracking capstone, owning database schema design and back-end logic.",
     ],
   },
   {
@@ -255,12 +258,17 @@ export const skillGroups: SkillGroup[] = [
     title: "Backend & Data",
     skills: [
       "Go",
+      "PHP",
+      "Laravel",
+      "Node.js",
       "PostgreSQL",
       "pgvector",
       "Redis",
       "Asynq",
       "MySQL",
       "SQLite",
+      "Firebase",
+      "MongoDB",
     ],
   },
   {
@@ -276,13 +284,12 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     index: "03",
-    title: "Frontend & Delivery",
+    title: "Frontend & Tooling",
     skills: [
       "React",
       "TypeScript",
       "Vue",
       "Tailwind CSS",
-      "Laravel",
       "Docker",
       "Git",
     ],
@@ -291,9 +298,9 @@ export const skillGroups: SkillGroup[] = [
 
 export const productionFacts: Fact[] = [
   { value: "24/7", label: "WhatsApp + voice qualification" },
+  { value: "5x", label: "lead connectivity lift" },
   { value: "7", label: "stage automated follow-up funnel" },
-  { value: "5", label: "external integrations" },
-  { value: "3", label: "core languages" },
+  { value: "3x", label: "customer interest lift" },
 ];
 
 export const bioIntro = {
@@ -304,12 +311,12 @@ export const bioIntro = {
     href: "https://dinamika.ac.id/",
   },
   after:
-    ". I like the part of the job where a messy process becomes a system that behaves predictably.",
+    ", where I graduated with a 3.74/4.00 GPA. I like the part of the job where a messy process becomes a system that behaves predictably.",
 };
 
 export const bioParagraphs: string[] = [
   "Most of my work sits between backend architecture and applied AI: Go services, multi-tenant RAG, WhatsApp and voice pipelines, and the React dashboards that make them usable. I've also shipped Laravel and Vue products end to end.",
-  "I work across the full SDLC, use AI-assisted engineering to move faster, and keep architecture, data integrity and edge cases under human review. Based in East Surabaya, open to full-time roles and freelance work.",
+  "I work across the full SDLC, use AI-augmented engineering to move faster, and keep architecture, data integrity and edge cases under human review. Based in East Surabaya, open to full-time roles and freelance work.",
 ];
 
 export const contact: Contact = {
@@ -320,7 +327,7 @@ export const contact: Contact = {
   availability: "Open to full-time roles and freelance work",
   linkedin: "https://linkedin.com/in/erick-winata-b59581235/",
   github: "https://github.com/erickwinz30",
-  cv: "/assets/CV_ATS_ErickWinata_English_17-10-2026.pdf",
+  cv: "/assets/CV_ATS_ErickWinata_English_25-10-2026.pdf",
 };
 
 export const stackMarquee: string[] = [

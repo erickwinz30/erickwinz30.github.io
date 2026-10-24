@@ -8,7 +8,7 @@ describe("Skills", () => {
     expect(screen.getByRole("heading", { name: "What I work with." })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Backend & Data" })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "AI & Automation" })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Frontend & Delivery" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Frontend & Tooling" })).toBeInTheDocument();
     expect(screen.getByText("pgvector")).toBeInTheDocument();
     expect(screen.queryByText("UML (draw.io/Lucidchart)")).not.toBeInTheDocument();
   });

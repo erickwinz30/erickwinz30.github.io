@@ -9,8 +9,8 @@ describe("Facts", () => {
     render(<Facts />);
     expect(screen.getByText("24/7")).toBeInTheDocument();
     expect(screen.getByText("7")).toBeInTheDocument();
-    expect(screen.getByText("5")).toBeInTheDocument();
-    expect(screen.getByText("3")).toBeInTheDocument();
+    expect(screen.getByText("5x")).toBeInTheDocument();
+    expect(screen.getByText("3x")).toBeInTheDocument();
     expect(screen.getAllByText(/stage automated follow-up funnel/i)).toHaveLength(1);
   });
 });
@@ -36,7 +36,7 @@ describe("Bio", () => {
     ).toHaveAttribute("href", "https://dinamika.ac.id/");
     expect(screen.getByRole("link", { name: "Download CV" })).toHaveAttribute(
       "href",
-      "/assets/CV_ATS_ErickWinata_English_17-10-2026.pdf",
+      "/assets/CV_ATS_ErickWinata_English_25-10-2026.pdf",
     );
   });
 });

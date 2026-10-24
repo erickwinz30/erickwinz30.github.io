@@ -23,7 +23,7 @@ describe("Experience", () => {
 
     expect(
       screen.getByText(
-        "Architected and built a multi-tenant AI automation platform in Go and React, migrating legacy n8n workflows into a high-reliability modular monolith.",
+        /Took over an existing production n8n lead-automation stack, then architected and built its Go\/React replacement — cutting processing latency from 1–2 minutes to seconds and eliminating low-code execution errors\./,
       ),
     ).toBeInTheDocument();
     expect(
@@ -31,6 +31,6 @@ describe("Experience", () => {
         "Implemented the Safety Stock method to optimize stock tracking.",
       ),
     ).toBeInTheDocument();
-    expect(screen.getAllByTestId("experience-detail")).toHaveLength(16);
+    expect(screen.getAllByTestId("experience-detail")).toHaveLength(19);
   });
 });
