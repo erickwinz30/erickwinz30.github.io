@@ -42,19 +42,51 @@ export const Projects = () => {
                         className="h-full w-full object-cover object-top transition-transform duration-[900ms] ease-out group-hover:scale-105"
                       />
                     ) : (
-                      <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-[radial-gradient(circle_at_70%_20%,hsl(8_92%_62%/0.28),transparent_55%)]">
-                        <span className="font-display text-[clamp(120px,18vw,260px)] font-extrabold leading-none tracking-[-0.06em] text-primary">
-                          {project.panel}
-                        </span>
-                        <span className="absolute left-5 top-5 text-[10px] uppercase tracking-[0.24em] text-muted-foreground">
+                      <div
+                        className={`relative flex h-full w-full items-center justify-center overflow-hidden ${
+                          project.panelLogo
+                            ? "bg-white"
+                            : "bg-[radial-gradient(circle_at_70%_20%,hsl(8_92%_62%/0.28),transparent_55%)]"
+                        }`}
+                      >
+                        {project.panelLogo ? (
+                          <img
+                            src={project.panelLogo.src}
+                            alt={project.panelLogo.alt}
+                            width={project.panelLogo.width}
+                            height={project.panelLogo.height}
+                            className="w-3/5 max-w-72 h-auto"
+                          />
+                        ) : (
+                          <span className="font-display text-[clamp(120px,18vw,260px)] font-extrabold leading-none tracking-[-0.06em] text-primary">
+                            {project.panel}
+                          </span>
+                        )}
+                        <span
+                          className={`absolute left-5 top-5 text-[10px] uppercase tracking-[0.24em] ${
+                            project.panelLogo
+                              ? "text-[#07183a]"
+                              : "text-muted-foreground"
+                          }`}
+                        >
                           {project.panelLabel}
                         </span>
-                        <span className="absolute bottom-5 right-5 text-[10px] uppercase tracking-[0.24em] text-muted-foreground">
+                        <span
+                          className={`absolute bottom-5 right-5 text-[10px] uppercase tracking-[0.24em] ${
+                            project.panelLogo
+                              ? "text-[#07183a]"
+                              : "text-muted-foreground"
+                          }`}
+                        >
                           {project.panelMeta}
                         </span>
                       </div>
                     )}
-                    <span className="absolute right-5 top-5 z-20 font-display text-sm font-semibold text-primary">
+                    <span
+                      className={`absolute right-5 top-5 z-20 font-display text-sm font-semibold ${
+                        project.panelLogo ? "text-[#07183a]" : "text-primary"
+                      }`}
+                    >
                       {project.index}
                     </span>
                   </div>

@@ -3,14 +3,19 @@ import { describe, expect, it } from "vitest";
 import { Hero } from "./Hero";
 
 describe("Hero", () => {
-  it("exposes one accessible name and the positioning statement", () => {
+  it("exposes one accessible name and the applied AI positioning statement", () => {
     render(<Hero />);
 
     expect(
       screen.getByRole("heading", { name: "Erick Winata" }),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/I turn messy operations into reliable software/i),
+      screen.getByText(/Applied AI Engineer \| AI Automation & Production Systems/i),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /I build conversational AI, multi-tenant RAG, and lead automation systems backed by Go services and React dashboards\./i,
+      ),
     ).toBeInTheDocument();
   });
 
@@ -23,7 +28,7 @@ describe("Hero", () => {
     );
     expect(screen.getByRole("link", { name: "Download CV" })).toHaveAttribute(
       "href",
-      "/assets/CV_ATS_ErickWinata_English_25-10-2026.pdf",
+      "/assets/Erick_Winata_Applied_AI_Engineer_CV_24-11-2026.pdf",
     );
   });
 });

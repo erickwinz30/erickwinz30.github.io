@@ -10,6 +10,34 @@ describe("Projects", () => {
     expect(screen.getByText(/Eight systems, built end to end\./i)).toBeInTheDocument();
     expect(screen.getAllByRole("article")).toHaveLength(8);
     expect(screen.getByRole("heading", { name: /99\.co/ })).toBeInTheDocument();
+    const logo = screen.getByRole("img", { name: "99.co logo" });
+    expect(logo).toHaveAttribute(
+      "src",
+      "/assets/img/portfolio/99co/99co-logo.png",
+    );
+    expect(logo).toHaveAttribute("width", "738");
+    expect(logo).toHaveAttribute("height", "294");
+    expect(logo).toHaveClass("w-3/5", "max-w-72", "h-auto");
+    const panel = logo.parentElement;
+    expect(panel).toHaveClass("bg-white");
+    expect(screen.queryByText("99")).not.toBeInTheDocument();
+    expect(screen.queryByText("99.co logo")).not.toBeInTheDocument();
+    expect(screen.getByText("AI Platform")).toHaveClass("text-[#07183a]");
+    expect(screen.getByText("Go + React")).toHaveClass("text-[#07183a]");
+    expect(screen.getByText("01")).toHaveClass("text-[#07183a]");
+    expect(screen.getByText("HR")).toBeInTheDocument();
+    expect(screen.getByText("Internal system")).toHaveClass("text-muted-foreground");
+    expect(screen.getByText("04")).toHaveClass("text-primary");
+    expect(
+      screen.getByText(
+        /Migrating n8n workflows cut processing time from 1–2 minutes to seconds\./i,
+      ),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /The WhatsApp chatbot and voice caller helped deliver 5× higher lead connectivity and 3× higher customer interest rates\./i,
+      ),
+    ).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Attendance App" })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Simple Ecommerce" })).toBeInTheDocument();
     expect(
