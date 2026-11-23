@@ -4,10 +4,11 @@ import { describe, expect, it } from "vitest";
 import { Projects } from "./Projects";
 
 describe("Projects", () => {
-  it("renders all seven projects from the previous portfolio", () => {
+  it("renders all eight selected projects", () => {
     render(<Projects />);
     expect(screen.getByRole("heading", { name: "Selected work." })).toBeInTheDocument();
-    expect(screen.getAllByRole("article")).toHaveLength(7);
+    expect(screen.getByText(/Eight systems, built end to end\./i)).toBeInTheDocument();
+    expect(screen.getAllByRole("article")).toHaveLength(8);
     expect(screen.getByRole("heading", { name: /99\.co/ })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Attendance App" })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Simple Ecommerce" })).toBeInTheDocument();
@@ -25,11 +26,26 @@ describe("Projects", () => {
     expect(
       screen.getByRole("heading", { name: "Warehouse Inventory" }),
     ).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "GagasKit" })).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        "GagasKit turns a product idea into a versioned, human-approved starter scaffold. This demo uses deterministic offline agents.",
+      ),
+    ).toBeInTheDocument();
     expect(screen.getByText(/computer hardware products/i)).toBeInTheDocument();
-    expect(screen.getByText("Asynq")).toBeInTheDocument();
+    expect(screen.getAllByText("Asynq")).toHaveLength(2);
     expect(screen.getByText("Retell AI")).toBeInTheDocument();
     expect(screen.getByText("Gupshup")).toBeInTheDocument();
     expect(screen.getByText("Golang")).toBeInTheDocument();
+    const walkthroughLink = screen.getByRole("link", {
+      name: /watch walkthrough for gagaskit/i,
+    });
+    expect(walkthroughLink).toHaveAttribute(
+      "href",
+      "/assets/img/portfolio/gagaskit/docuflow.mp4",
+    );
+    expect(walkthroughLink).toHaveAttribute("target", "_blank");
+    expect(walkthroughLink).toHaveAttribute("rel", "noopener noreferrer");
   });
 
   it("opens the flagship technical breakdown for keyboard users", async () => {
@@ -56,5 +72,6 @@ describe("Projects", () => {
     expect(cards[4].querySelectorAll('[data-cursor="view"]')).toHaveLength(0);
     expect(cards[5].querySelectorAll('[data-cursor="view"]')).toHaveLength(1);
     expect(cards[6].querySelectorAll('[data-cursor="view"]')).toHaveLength(0);
+    expect(cards[7].querySelectorAll('[data-cursor="view"]')).toHaveLength(1);
   });
 });

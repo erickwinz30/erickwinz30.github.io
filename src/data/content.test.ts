@@ -21,8 +21,8 @@ describe("portfolio content", () => {
     ]);
   });
 
-  it("keeps all seven selected projects from the previous portfolio", () => {
-    expect(projects).toHaveLength(7);
+  it("keeps all eight selected projects including GagasKit", () => {
+    expect(projects).toHaveLength(8);
     expect(projects.map((project) => project.id)).toEqual([
       "99co",
       "attendance",
@@ -31,7 +31,16 @@ describe("portfolio content", () => {
       "kenzou",
       "calculus",
       "warehouse",
+      "gagaskit",
     ]);
+    const gagaskit = projects[7];
+    expect(gagaskit.index).toBe("08");
+    expect(gagaskit.image).toBe("/assets/img/portfolio/gagaskit/docuflow.webp");
+    expect(gagaskit.imageWidth).toBe(1440);
+    expect(gagaskit.imageHeight).toBe(900);
+    expect(gagaskit.walkthroughHref).toBe(
+      "/assets/img/portfolio/gagaskit/docuflow.mp4",
+    );
   });
 
   it("gives the flagship project a supported five-point breakdown and no dead link", () => {

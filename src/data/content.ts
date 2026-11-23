@@ -24,6 +24,7 @@ export interface Project {
   panelMeta?: string;
   href?: string;
   demoHref?: string;
+  walkthroughHref?: string;
   breakdown?: string[];
 }
 
@@ -187,6 +188,18 @@ export const projects: Project[] = [
     image: "/assets/img/portfolio/bfit-gudang-screenshot/home.png",
     imageWidth: 1906,
     imageHeight: 961,
+  },
+  {
+    id: "gagaskit",
+    index: "08",
+    title: "GagasKit",
+    description:
+      "GagasKit turns a product idea into a versioned, human-approved starter scaffold. This demo uses deterministic offline agents.",
+    stack: ["Go", "React", "TypeScript", "PostgreSQL", "Redis", "Asynq"],
+    image: "/assets/img/portfolio/gagaskit/docuflow.webp",
+    imageWidth: 1440,
+    imageHeight: 900,
+    walkthroughHref: "/assets/img/portfolio/gagaskit/docuflow.mp4",
   },
 ];
 

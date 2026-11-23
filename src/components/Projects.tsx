@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowUpRight, ExternalLink, Github } from "lucide-react";
+import { ArrowUpRight, ExternalLink, Github, Play } from "lucide-react";
 import { projects } from "../data/content";
 import { Reveal } from "./ui/Reveal";
 
@@ -19,7 +19,7 @@ export const Projects = () => {
             </h2>
           </div>
           <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-            Seven systems, built end to end. The flagship platform is available
+            Eight systems, built end to end. The flagship platform is available
             as a short technical breakdown.
           </p>
         </div>
@@ -103,6 +103,19 @@ export const Projects = () => {
                         >
                           <ExternalLink size={15} />
                           Live demo
+                        </a>
+                      ) : null}
+                      {project.walkthroughHref ? (
+                        <a
+                          href={project.walkthroughHref}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Watch walkthrough for ${project.title}`}
+                          data-cursor="view"
+                          className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.12em] text-foreground transition-colors hover:text-primary"
+                        >
+                          <Play size={15} aria-hidden="true" />
+                          Watch walkthrough
                         </a>
                       ) : null}
                       {project.breakdown ? (
