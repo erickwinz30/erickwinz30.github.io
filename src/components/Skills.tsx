@@ -14,7 +14,7 @@ export const Skills = () => {
           </h2>
         </div>
 
-        <div className="grid gap-10 md:grid-cols-3 md:gap-8">
+        <div className="grid gap-10 md:grid-cols-2 md:gap-8">
           {skillGroups.map((group, index) => (
             <Reveal key={group.index} delay={index * 0.08}>
               <div className="border-t border-border pt-6">

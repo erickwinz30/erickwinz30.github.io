@@ -14,7 +14,7 @@ export const Hero = () => {
     >
       <div className="mx-auto w-full max-w-[1280px]">
         <p className="mb-6 text-[10px] font-medium uppercase tracking-[0.18em] text-primary md:text-[11px] md:tracking-[0.24em]">
-          Full-stack · AI Automation · Backend
+          Applied AI Engineer | AI Automation &amp; Production Systems
         </p>
 
         <h1 className="grid grid-cols-1">
@@ -63,8 +63,8 @@ export const Hero = () => {
 
         <div className="mt-10 flex flex-col gap-6 border-t border-border pt-6 md:flex-row md:items-end md:justify-between">
           <p className="max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            I turn messy operations into reliable software — Go backends,
-            multi-tenant AI pipelines, and the interfaces people actually use.
+            I build conversational AI, multi-tenant RAG, and lead automation
+            systems backed by Go services and React dashboards.
           </p>
 
           <div className="flex flex-wrap items-center gap-3">

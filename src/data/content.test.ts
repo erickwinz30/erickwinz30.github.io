@@ -62,13 +62,42 @@ describe("portfolio content", () => {
     );
   });
 
-  it("lists all five roles and the three condensed skill groups", () => {
+  it("lists all five roles and the four AI-first skill groups", () => {
     expect(experience).toHaveLength(5);
-    expect(skillGroups).toHaveLength(3);
-    expect(skillGroups.flatMap((group) => group.skills)).toHaveLength(23);
+    expect(skillGroups.map((group) => group.title)).toEqual([
+      "Applied AI",
+      "Automation & Integrations",
+      "Backend & Data",
+      "Frontend & Tooling",
+    ]);
+    expect(skillGroups[0].skills).toEqual([
+      "OpenAI API",
+      "RAG",
+      "pgvector",
+      "Conversational AI",
+      "Retell AI",
+    ]);
+    expect(skillGroups[1].skills).toContain("CRM integrations");
+    expect(skillGroups[2].skills).toContain("MongoDB (basic)");
+    expect(skillGroups.flatMap((group) => group.skills)).toHaveLength(27);
     expect(services).toHaveLength(3);
+    expect(services.map((service) => service.title)).toEqual([
+      "Applied AI & Conversational Systems",
+      "Automation & Integrations",
+      "Full-Stack Delivery",
+    ]);
+    expect(projects[0].description).toContain(
+      "Migrating n8n workflows cut processing time from 1–2 minutes to seconds.",
+    );
+    expect(projects[0].description).toContain(
+      "The WhatsApp chatbot and voice caller helped deliver 5× higher lead connectivity and 3× higher customer interest rates.",
+    );
+    expect(bioIntro.before).toContain(
+      "Applied AI Engineer | AI Automation & Production Systems",
+    );
     expect(bioIntro.link.href).toBe("https://dinamika.ac.id/");
     expect(bioParagraphs).toHaveLength(2);
+    expect(bioParagraphs[1]).toContain("n8n CRM, WhatsApp");
   });
 
   it("keeps the CV highlights and role details aligned with the optimized CV", () => {
@@ -91,7 +120,7 @@ describe("portfolio content", () => {
     expect(contact.whatsapp).toBe("62818570017");
     expect(contact.location).toContain("Surabaya");
     expect(contact.cv).toBe(
-      "/assets/CV_ATS_ErickWinata_English_25-10-2026.pdf",
+      "/assets/Erick_Winata_Applied_AI_Engineer_CV_24-11-2026.pdf",
     );
   });
 });

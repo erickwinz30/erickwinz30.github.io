@@ -30,13 +30,19 @@ describe("Bio", () => {
     render(<Bio />);
     expect(screen.getByRole("heading", { name: "About Erick." })).toBeInTheDocument();
     expect(screen.getByAltText("Erick Winata")).toBeInTheDocument();
+    expect(
+      screen.getByText(/Applied AI Engineer \| AI Automation & Production Systems/i),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/migrated production n8n CRM, WhatsApp, and API automation workflows into a Go backend and React dashboard/i),
+    ).toBeInTheDocument();
     expect(screen.getByText(/Information Systems graduate/i)).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: "Dinamika University (STIKOM Surabaya)" }),
     ).toHaveAttribute("href", "https://dinamika.ac.id/");
     expect(screen.getByRole("link", { name: "Download CV" })).toHaveAttribute(
       "href",
-      "/assets/CV_ATS_ErickWinata_English_25-10-2026.pdf",
+      "/assets/Erick_Winata_Applied_AI_Engineer_CV_24-11-2026.pdf",
     );
   });
 });

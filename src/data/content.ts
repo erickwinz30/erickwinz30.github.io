@@ -10,6 +10,13 @@ export interface Service {
   link: { label: string; href: string };
 }
 
+export interface ProjectPanelLogo {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
 export interface Project {
   id: string;
   index: string;
@@ -20,6 +27,7 @@ export interface Project {
   imageWidth?: number;
   imageHeight?: number;
   panel?: string;
+  panelLogo?: ProjectPanelLogo;
   panelLabel?: string;
   panelMeta?: string;
   href?: string;
@@ -68,24 +76,24 @@ export const navLinks: NavLink[] = [
 export const services: Service[] = [
   {
     index: "01",
-    title: "Backend & AI Automation",
+    title: "Applied AI & Conversational Systems",
     description:
-      "Go services, event queues and multi-tenant RAG pipelines that survive real traffic, real edge cases and real sales teams.",
+      "Conversational AI, multi-tenant RAG with pgvector, and LLM-powered WhatsApp and voice agents engineered for predictable production behavior.",
     link: { label: "See selected work", href: "#work" },
   },
   {
     index: "02",
-    title: "Full-Stack Delivery",
+    title: "Automation & Integrations",
     description:
-      "From database schema to admin dashboard. React, TypeScript and Laravel shipped end to end, not handed over in pieces.",
-    link: { label: "See experience", href: "#experience" },
+      "Deterministic Go workflows, scheduled follow-up queues, and reliable CRM, WhatsApp Business API, and webhook integrations with retries and fallbacks.",
+    link: { label: "See skills", href: "#skills" },
   },
   {
     index: "03",
-    title: "Systems & Integrations",
+    title: "Full-Stack Delivery",
     description:
-      "WhatsApp, voice AI, CRMs and spreadsheets joined into one dependable flow with retries, fallbacks and clear observability.",
-    link: { label: "See skills", href: "#skills" },
+      "From PostgreSQL schemas and Go services to React and TypeScript admin dashboards, plus Laravel and Vue products shipped end to end.",
+    link: { label: "See experience", href: "#experience" },
   },
 ];
 
@@ -95,7 +103,7 @@ export const projects: Project[] = [
     index: "01",
     title: "99.co — Real-Estate AI Call & Chatbot Platform",
     description:
-      "An end-to-end conversational AI and lead automation platform built to qualify prospective property buyers and schedule site visits 24/7. Integrates WhatsApp Chatbot and AI Voice Calling to answer project-specific inquiries via multi-tenant RAG, execute deterministic 7-stage scheduled follow-ups, and automate CRM sales outreach.",
+      "End-to-end conversational AI, multi-tenant RAG, and lead automation platform built in Go and React to qualify property buyers and schedule site visits 24/7 across WhatsApp and voice AI. Migrating n8n workflows cut processing time from 1–2 minutes to seconds. The WhatsApp chatbot and voice caller helped deliver 5× higher lead connectivity and 3× higher customer interest rates.",
     stack: [
       "Go",
       "PostgreSQL",
@@ -108,7 +116,12 @@ export const projects: Project[] = [
       "Retell AI",
       "Gupshup",
     ],
-    panel: "99",
+    panelLogo: {
+      src: "/assets/img/portfolio/99co/99co-logo.png",
+      alt: "99.co logo",
+      width: 738,
+      height: 294,
+    },
     panelLabel: "AI Platform",
     panelMeta: "Go + React",
     breakdown: [
@@ -270,6 +283,28 @@ export const experience: ExperienceItem[] = [
 export const skillGroups: SkillGroup[] = [
   {
     index: "01",
+    title: "Applied AI",
+    skills: [
+      "OpenAI API",
+      "RAG",
+      "pgvector",
+      "Conversational AI",
+      "Retell AI",
+    ],
+  },
+  {
+    index: "02",
+    title: "Automation & Integrations",
+    skills: [
+      "n8n",
+      "CRM integrations",
+      "WhatsApp Business API",
+      "REST APIs",
+      "Scheduled workflows",
+    ],
+  },
+  {
+    index: "03",
     title: "Backend & Data",
     skills: [
       "Go",
@@ -277,28 +312,16 @@ export const skillGroups: SkillGroup[] = [
       "Laravel",
       "Node.js",
       "PostgreSQL",
-      "pgvector",
       "Redis",
       "Asynq",
       "MySQL",
       "SQLite",
       "Firebase",
-      "MongoDB",
+      "MongoDB (basic)",
     ],
   },
   {
-    index: "02",
-    title: "AI & Automation",
-    skills: [
-      "OpenAI API",
-      "RAG",
-      "Retell AI",
-      "WhatsApp Business API",
-      "n8n",
-    ],
-  },
-  {
-    index: "03",
+    index: "04",
     title: "Frontend & Tooling",
     skills: [
       "React",
@@ -320,7 +343,7 @@ export const productionFacts: Fact[] = [
 
 export const bioIntro = {
   before:
-    "I'm a Full-Stack & AI Automation Engineer and an Information Systems graduate from ",
+    "Applied AI Engineer | AI Automation & Production Systems — I'm an Information Systems graduate from ",
   link: {
     label: "Dinamika University (STIKOM Surabaya)",
     href: "https://dinamika.ac.id/",
@@ -330,8 +353,8 @@ export const bioIntro = {
 };
 
 export const bioParagraphs: string[] = [
-  "Most of my work sits between backend architecture and applied AI: Go services, multi-tenant RAG, WhatsApp and voice pipelines, and the React dashboards that make them usable. I've also shipped Laravel and Vue products end to end.",
-  "I work across the full SDLC, use AI-augmented engineering to move faster, and keep architecture, data integrity and edge cases under human review. Based in East Surabaya, open to full-time roles and freelance work.",
+  "Most of my work sits between applied AI and backend systems: conversational AI, multi-tenant RAG, WhatsApp and voice pipelines, and the Go services and React dashboards that run them. I've also shipped Laravel and Vue products end to end.",
+  "Recently, I migrated production n8n CRM, WhatsApp, and API automation workflows into a Go backend and React dashboard to cut execution latency and eliminate recurring low-code errors. Based in East Surabaya, open to full-time roles and freelance work.",
 ];
 
 export const contact: Contact = {
@@ -342,7 +365,7 @@ export const contact: Contact = {
   availability: "Open to full-time roles and freelance work",
   linkedin: "https://linkedin.com/in/erick-winata-b59581235/",
   github: "https://github.com/erickwinz30",
-  cv: "/assets/CV_ATS_ErickWinata_English_25-10-2026.pdf",
+  cv: "/assets/Erick_Winata_Applied_AI_Engineer_CV_24-11-2026.pdf",
 };
 
 export const stackMarquee: string[] = [
