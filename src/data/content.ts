@@ -162,9 +162,11 @@ export const projects: Project[] = [
     description:
       "A full-stack car wash management application for admins and members. Integrated gamification features to increase user engagement.",
     stack: ["Laravel", "Blade", "MySQL"],
-    image: "/assets/img/portfolio/kenzou-app-screenshot/customers-homepage.png",
-    imageWidth: 400,
-    imageHeight: 897,
+    image: "/assets/img/portfolio/kenzou-app-screenshot/kenzou-cover.webp",
+    imageWidth: 1280,
+    imageHeight: 800,
+    walkthroughHref:
+      "/assets/img/portfolio/kenzou-app-screenshot/kenzou-walkthrough.mp4",
   },
   {
     id: "calculus",

@@ -37,6 +37,15 @@ describe("Projects", () => {
     expect(screen.getByText("Retell AI")).toBeInTheDocument();
     expect(screen.getByText("Gupshup")).toBeInTheDocument();
     expect(screen.getByText("Golang")).toBeInTheDocument();
+    const kenzouWalkthroughLink = screen.getByRole("link", {
+      name: /watch walkthrough for kenzou drive thru car wash/i,
+    });
+    expect(kenzouWalkthroughLink).toHaveAttribute(
+      "href",
+      "/assets/img/portfolio/kenzou-app-screenshot/kenzou-walkthrough.mp4",
+    );
+    expect(kenzouWalkthroughLink).toHaveAttribute("target", "_blank");
+    expect(kenzouWalkthroughLink).toHaveAttribute("rel", "noopener noreferrer");
     const walkthroughLink = screen.getByRole("link", {
       name: /watch walkthrough for gagaskit/i,
     });
@@ -69,7 +78,7 @@ describe("Projects", () => {
     expect(cards[1].querySelectorAll('[data-cursor="view"]')).toHaveLength(1);
     expect(cards[2].querySelectorAll('[data-cursor="view"]')).toHaveLength(2);
     expect(cards[3].querySelectorAll('[data-cursor="view"]')).toHaveLength(0);
-    expect(cards[4].querySelectorAll('[data-cursor="view"]')).toHaveLength(0);
+    expect(cards[4].querySelectorAll('[data-cursor="view"]')).toHaveLength(1);
     expect(cards[5].querySelectorAll('[data-cursor="view"]')).toHaveLength(1);
     expect(cards[6].querySelectorAll('[data-cursor="view"]')).toHaveLength(0);
     expect(cards[7].querySelectorAll('[data-cursor="view"]')).toHaveLength(1);
